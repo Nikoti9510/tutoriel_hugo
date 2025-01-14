@@ -1,0 +1,9 @@
+<section class="preview">
+    {{ range where .Site.RegularPages "Type" "projets" | first 1 }}
+    <article>
+        <h2>{{ .Title }}</h2>
+        <p>{{ .Description }}</p>
+        <p><a href="{{ .RelPermalink }}">lire la suite</a></p>
+    </article>
+    {{ end }}
+</section>

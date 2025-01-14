@@ -1,0 +1,51 @@
+* {
+    font-family: sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+body > * {
+    padding: 2rem;
+    text-align: center;   
+} 
+main {
+    margin: 0 auto;
+} 
+.btn a, 
+a.btn {
+    padding: 1rem 2rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    border-radius: 10rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    margin-block-start: 1rem;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 0;
+}
+article {
+    max-width: 70ch;
+    text-align: left;
+}
+.preview {
+    margin-block: 4rem;
+}
+.preview article {
+    padding: 2rem;
+    background: whitesmoke;
+    border-radius: 8px;
+}
+footer {
+    background-color: whitesmoke;
+    margin-top: auto;
+    font-style: italic;
+}

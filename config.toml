@@ -1,0 +1,25 @@
+baseURL = 'https://hugo-template-portfolio.netlify.app/'
+title = 'Template'
+enableEmoji = true
+defaultContentLanguage = 'fr'
+
+[menus]
+  [[menus.header]]
+    name = 'Accueil'
+    url = '/'
+    weight = 10
+  [[menus.header]]
+    name = 'Contact'
+    url = '/contact'
+    weight = 20
+  [[menus.header]]
+    name = 'Mes projets'
+    url = '/projets'
+    weight = 30
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
