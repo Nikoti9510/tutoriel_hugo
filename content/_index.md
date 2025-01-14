@@ -14,8 +14,8 @@ On parle de JamStack pour décrire un site créé en prenant avantage de plusieu
 Dans ce tutoriel, on va créer un site en utilisant les outils suivants : 
 
 
-* [Github Desktop](https://desktop.github.com/download/) pour gérer facilement notre projet en créant des sauvegardes et différentes versions de travaux, tout en stockant notre projet en ligne. On utilise la version desktop pour nous simplifier le travail, et ne pas avoir à apprendre les commandes Gits. 
-* [Visual Studio Code](https://code.visualstudio.com/) pour notre éditeur de code. Il nous permet de facilement faire le lien avec Github et Hugo. Il est tout à fait possible d'en utiliser un autre, mais c'est de loin de plus pratique.
+* [Github Desktop](https://desktop.github.com/download/) pour gérer facilement notre projet en créant des sauvegardes et différentes versions, tout en stockant notre projet en ligne. On utilise la version desktop pour ne pas avoir à apprendre les commandes Gits. 
+* [Visual Studio Code](https://code.visualstudio.com/) pour notre éditeur de code. Il nous permet de faire le lien avec Github et Hugo. Il est tout à fait possible d'en utiliser un autre, mais c'est de loin de plus pratique.
 * [Hugo](https://gohugo.io/), un framework ultra rapide et open source, qui nous permet de simplifier la construction d'un site web optimisé, avec des options de templating nous permettant de facilité la maintenabilité et les modifications du site.
 * [Sveltia](https://github.com/sveltia/sveltia-cms/?tab=readme-ov-file#getting-started), c'est un projet se basant sur DecapCMS (anciennement [NetlifyCMS](https://www.netlify.com/blog/netlify-cms-to-become-decap-cms/)) et l'améliorant, notamment avec l'ajout d'un interface beaucoup plus poussé et de fonctionnalité de traitement d'images plus avancé. C'est grâce à Sveltia que l'on va pouvoir mettre à jour et ajouter du contenu sur notre site sans passer par un éditeur de code.
 * [Netlify](https://www.netlify.com/), qui fait le lien avec notre répertoire Github où est stocké notre projet, pour le transformer en site internet disponible en ligne. 
@@ -29,7 +29,7 @@ Une fois Github Desktop et Visual Studio Code installé, on va pouvoir mettre en
 ![Interface du dashboard Github](/dashboard-github.png "Interface du dashboard Github")
 
 
- Donner un nom à votre répertoire, dans notre exemple ce sera "*tutoriel_portfolio*", et validez en cliquant sur `Create repository` en bas à droite. (les autres options peuvent être laissés par défaut). 
+Donner un nom à votre répertoire, dans notre exemple ce sera "*tutoriel_portfolio*", et validez en cliquant sur `Create repository` en bas à droite. (les autres options peuvent être laissés par défaut). 
 
 
 ![Création d'un répertoire dans l'interface github](/dashboard-github-etape-2.png "Création d'un répertoire dans l'interface github")
@@ -41,26 +41,26 @@ Si on retourne dans notre dashboard, on voit que notre nouveau répertoire est b
 ![Dashboard de github avec le nouveau répertoire présent](/dashboard-github-etape-3.png "Dashboard de github avec le nouveau répertoire présent")
 
 
-Maintenant, rendons nous dans Github Desktop. Si ce n'est pas déjà fait, connecter l'application à votre compte Github. Ensuite, on peut cloner notre répertoire afin de pouvoir travailler localement sur notre machine. \
-En haut à gauche, on clique sur `File > Clone repository`.
+Maintenant, rendons nous dans Github Desktop. Si ce n'est pas déjà fait, connectez l'application à votre compte Github. Ensuite, il est possible de cloner votre répertoire, afin de pouvoir travailler localement sur votre machine. \
+En haut à gauche, cliquez sur `File > Clone repository`.
 
 
 ![Interface de github desktop, clonage d'un répertoire ](/github-desktop-etape-1.png "Interface de github desktop, clonage d'un répertoire")
 
 
-On choisit le répertoire que l'on a créé plus tôt et on clique sur `Clone` en bas de la fenêtre. 
+Choisissez le répertoire que vous avez créé plus tôt et cliquez sur `Clone` en bas de la fenêtre. 
 
 
 ![Choix d'un répertoire dans github desktop ](/github-desktop-etape-2.png "Choix d'un répertoire dans github desktop")
 
 
-Une fois le répertoire cloné, on peut constater que l'on se trouve bien dans le bon espace de travail en haut à gauche (et passer d'un projet à un autre si besoin). On peut maintenant ouvrir notre projet dans VScode en cliquant dans le bouton `Open in Visual Studio Code` au centre de l'écran.
+Une fois le répertoire cloné, on peut constater que l'on se trouve bien dans le bon espace de travail en haut à gauche (et passer d'un projet à un autre si besoin). Vous pouvez maintenant ouvrir votre projet dans VScode en cliquant dans le bouton `Open in Visual Studio Code` au centre de l'écran.
 
 
 ![Interface de github desktop une fois un répertoire cloné](/github-desktop-etape-3.png "Interface de github desktop une fois le répertoire cloné")
 
 
-Et voilà, on est prêt à travailler ! On pourrait s'arrêter là et faire un site internet statique en créant des pages en HTML, en les personnalisant avec des feuilles de styles CSS et en ajoutant de l'interaction en Javascript. Mais avant de faire ça, on va installer Hugo afin de nous faciliter la vie. 
+Et voilà, vous êtes prêt à travailler ! On pourrait s'arrêter là et faire un site internet statique en créant des pages en HTML, en les personnalisant avec des feuilles de styles CSS et en ajoutant de l'interaction en Javascript. Mais avant de faire ça, on va installer Hugo afin de nous faciliter la vie. 
 
 
 ***Avant de continuer, fermez GitHub Desktop et Visual Studio Code.***
@@ -74,10 +74,10 @@ Oui je sais, j'ai écris plus haut qu'on n'aurait pas besoin de travailler avec 
 ### Installer GO et Hugo
 
 
-Commençons par nous rendre sur [](gohugo.io/installation/)[gohugo.io/installation/](<>) et cliquez sur l'option correspondant à votre navigateur. Pour ce tutoriel, je vais suivre les étapes correspondant à Windows (c'est plus simple pour MacOS). 
+Commençez par vous rendre sur [](gohugo.io/installation/)[gohugo.io/installation/](<>) et cliquez sur l'option correspondant à votre navigateur. Pour ce tutoriel, je vais suivre les étapes correspondant à Windows (c'est plus simple avec MacOS). 
 
 
-Dans un premier temps, il nous faut installer [Go](https://go.dev/doc/install), le langage de programmation dans lequel Hugo est écrit. Pas de panique, nous n'aurons pas besoin d'apprendre un nouveau langage pour ce projet, il est simplement nécessaire de l'installer sur notre machine pour installer Hugo. Télécharger l'exécutable pour Windows et suivez les instructions de l'installateur. 
+Dans un premier temps, il nous faut installer [Go](https://go.dev/doc/install), le langage de programmation dans lequel Hugo est écrit. Pas de panique, nous n'aurons pas besoin d'apprendre un nouveau langage pour ce projet, il est simplement nécessaire de l'installer sur notre machine pour installer Hugo. Téléchargez l'exécutable pour Windows et suivez les instructions de l'installateur. 
 
 
 ![Choisir le bon exécutable pour installer Go](/go.png "Choisir le bon exécutable pour installer Go")
@@ -89,13 +89,13 @@ Vous pouvez changer l'emplacement de l'installation sans problème lors de l'ins
 ![Changement de l'emplacement d'installation de Go](/go_2.png "Changement de l'emplacement d'installation de Go")
 
 
-Une fois l'installation terminé, on ouvre une invite de commande (Windows + R et sélectionner `cmd` ou cliquer sur le menu démarrer et chercher `cmd`). Taper dans le console la ligne `Go version` pour constater que l'installation est bien réussit. 
+Une fois l'installation terminé, on ouvre une invite de commande (Windows + R et sélectionnez `cmd` ou cliquez sur le menu démarrer et cherchez `cmd`). Tapez dans la console la ligne `Go version` pour constater que l'installation est bien réussit. 
 
 
 ![Go est bien installé sur cette machine](/go_3.png "Go est bien installé sur cette machine")
 
 
-Dans la même console, on peut maintenant copier la commande suivante pour installer Hugo : 
+Dans la même console, vous pouvez maintenant copier la commande suivante pour installer Hugo : 
 
 
 `go install github.com/gohugoio/hugo@latest`
@@ -116,7 +116,7 @@ Une fois que l'installation est terminé, on est prêt à créer notre site ! Po
 ![Ouvrir un terminal dans Visual Studio Code](/terminal.png "Ouvrir un terminal dans Visual Studio Code")
 
 
-Dans le terminal qui s'est ouvert en bas de l'éditeur, on va pouvoir maintenant gérer notre site avec Hugo. Pour cela, rien de plus simple, il suffit de taper la ligne de commande suivante : 
+Dans le terminal qui s'est ouvert en bas de l'éditeur, vous pouvez maintenant générer votre site avec Hugo. Pour cela, rien de plus simple, il suffit de taper la ligne de commande suivante : 
 
 
 `Hugo new site NOM_DU_SITE`
@@ -139,10 +139,10 @@ Hugo propose une [collection de thème gratuit sur son site](https://themes.gohu
 `git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod`
 
 
-> /!\ Il faut s'assurer que l'on se trouve à la racine de notre projet avant d'exécuter la commande. Dans le terminal, le chemin devrait être "GitHub\tutoriel_portfolio". Si ce n'est pas le cas, il faut s'y rendre. Utiliser `cd Nom_du_dossier` vous permet de vous rendre à cette endroit. Utilisez `ls` vous permet de lister tout les dossiers en enfant de celui dans lequel vous êtes. Utilisez `cd ..` vous permet de remonter un niveau. 
+> /!\ Il faut s'assurer que l'on se trouve à la racine de notre projet avant d'exécuter la commande. Dans le terminal, le chemin devrait être "GitHub\Nom_du_repertoire". Si ce n'est pas le cas, il faut s'y rendre. Utiliser `cd Nom_du_dossier` vous permet de vous rendre à cette endroit. Utilisez `ls` vous permet de lister tout les dossiers en enfant de celui dans lequel vous êtes. Utilisez `cd ..` vous permet de remonter un niveau. 
 
 
-Une fois la commande lancé et le thème téléchargé, il ne reste plus qu'a indiquer à Hugo que nous souhaitons utiliser ce thème. Pour cela, il faut se rendre dans le fichier de configuration `config.toml` (ou `hugo.toml` cela les cas) et d'ajouter la ligne suivante dans le fichier : 
+Une fois la commande lancé et le thème téléchargé, il ne reste plus qu'a indiquer à Hugo que nous souhaitons utiliser ce thème. Pour cela, il faut se rendre dans le fichier de configuration `config.toml` (ou `hugo.toml`, les deux fonctionnes et peuvent être présent) et d'ajouter la ligne suivante dans le fichier : 
 
 
 `theme = ["PaperMod"]`
@@ -169,13 +169,13 @@ Hugo nous permet de tester notre travail via un serveur local. Pour cela, il suf
 `hugo serve`
 
 
-Une fois le serveur lancé, il suffit de cliquer sur le lien que nous donne Hugo pour visualiser notre site. (Il faut utiliser le raccourcis clavier *Ctrl+C* pour couper le serveur local).
+Une fois le serveur lancé, cliquez sur le lien que nous donne Hugo pour visualiser notre site. (Il faut utiliser le raccourci clavier *Ctrl+C* pour couper le serveur local).
 
 
 ![Lancement d'un serveur de test](/hugo-serve.png "lancement d'un serveur de test")
 
 
- Si on se rend sur la page, on se rend compte qu'il y a un soucis. 
+Si on se rend sur la page, on constaste qu'il y a un problème. 
 
 
 ![Hugo ne trouve pas de page à afficher](/404-rip.png "Hugo ne trouve pas de page à afficher")
@@ -184,7 +184,7 @@ Une fois le serveur lancé, il suffit de cliquer sur le lien que nous donne Hugo
 ## Structure d'un site Hugo
 
 
-Si rien ne s'affiche, c'est parce que notre site est vide (malin je sais). Regardons la structure généré par Hugo lors de la création du site d'un peu plus près. 
+Si rien ne s'affiche, c'est parce que notre site est vide (malin, je sais). Regardons la structure généré par Hugo lors de la création du site d'un peu plus près. 
 
 
 ![Structure du projet dans VScode](/structure-du-site.png "Structure du projet dans VScode")
@@ -194,11 +194,11 @@ Pour le moment, il y a 3 dossiers qui nous intéresses :
 
 
 1. **static** : C'est ici que l'on va stocker toutes les ressources utiles au site qui ne changent jamais, tels que les images réutilisées dans toutes les pages, les fichiers CSS et Javascripts, etc.
-2. **content** : Dans ce dossier, on va retrouver nos pages, en format `.HTML` ou `.md` (pour [Markdown](https://www.markdownguide.org/cheat-sheet/))
-3. **layouts** : Où l'on va stocker les fameuses Partials, en quelques sortent des sections ou widgets, que l'on va pouvoir réutiliser dans notre site.
+2. **content** : Dans ce dossier, on va retrouver nos pages, en format `.md` (pour [Markdown](https://www.markdownguide.org/cheat-sheet/))
+3. **layouts** : Où l'on va stocker les pages de templates en format `.HTML`, ainsi que les fameuses Partials, en quelques sortent des sections que l'on va pouvoir réutiliser dans notre site. 
 
 
-Pour plus de détails sur la structure de Hugo, consulter la documentation à ce sujet : [gohugo.io/getting-started/directory-structure/#directories](https://gohugo.io/getting-started/directory-structure/#directories)
+Pour plus de détails sur la structure de Hugo, consultez la documentation à ce sujet : [gohugo.io/getting-started/directory-structure/#directories](https://gohugo.io/getting-started/directory-structure/#directories)
 
 
 Pour que notre site puisse fonctionner, il y quelques étapes à suivre : 
@@ -213,7 +213,7 @@ Pour que notre site puisse fonctionner, il y quelques étapes à suivre :
        {{ .Content }}
    {{ end }}
    ```
-3. Toujours `layouts > _default`, créer un fichier `baseof.html` avec le contenu suivant :
+3. Toujours dans `layouts > _default`, créer un fichier `baseof.html` avec le contenu suivant :
 
 
 	```html
@@ -225,7 +225,7 @@ Pour que notre site puisse fonctionner, il y quelques étapes à suivre :
      </body>
      </html>
    ```
-4. enfin, dans le dossier *content*, ajouter un fichier `_index.md` avec le contenu suivant : 
+4. Enfin, dans le dossier `content`, ajouter un fichier `_index.md` avec le contenu suivant : 
 	```markdown
 	---
 	title: "Page d'accueil"
@@ -251,13 +251,13 @@ Si on relance notre serveur de test, on constate bien que du contenu s'affiche !
 Expliquons ce que l'on vient de faire : 
 
 
-On créer un fichier `home.html` qui correspond à notre page d'accueil et on l'ajoute dans le dossier `layouts > _default` afin que Hugo le trouve. Dans ce fichier, on défini un bloc que l'on appelle `main` dans lequel on ajoute le contenu de la page, `Content`. Ce contenu est récupéré automatiquement par Hugo dans le fichier `_index.md`, si celle-ci existe dans le dossier content. On a également ajouté une balise HTML, qui elle sera statique et ne dépendra pas du contenu de la page. 
+On créer un fichier `home.html` qui correspond à notre page d'accueil et on l'ajoute dans le dossier `layouts > _default` afin que Hugo le trouve. Dans ce fichier, on défini un bloc que l'on nomme `main` dans lequel on ajoute le contenu de la page, `Content`. Ce contenu est récupéré automatiquement par Hugo dans le fichier `_index.md`, si celle-ci existe dans le dossier content.
 
 
-On a ensuite défini dans notre dossier `_defaut` le template de page pour toute nos pages, qui se nomme toujours `baseof.html`. C'est cette page qui est toujours utilisé par Hugo pour assembler nos pages (il est possible d'en définir plusieurs en cas de besoin, voir [gohugo.io/templates/lookup-order](https://gohugo.io/templates/lookup-order/)). Pour le moment, notre fichier `baseof.html` est très simple, mais on va venir l'améliorer un peu plus tard. 
+On a ensuite défini dans notre dossier `_defaut` le template de page pour toutes nos pages, qui se nomme `baseof.html`. C'est cette page qui est toujours utilisé par Hugo pour assembler nos pages (il est possible d'en définir plusieurs en cas de besoin, voir [gohugo.io/templates/lookup-order](https://gohugo.io/templates/lookup-order/)). Pour le moment, notre fichier `baseof.html` est très simple, mais on va venir l'améliorer un peu plus tard. On a en plus de cela créé un modèle alternatif pour notre page d'acceuil, `home.html`.
 
 
-Enfin, on créer le fichier Markdown `_index.md`, c'est à dire le fichier de contenu, pour notre page. On le place bien dans le dossier *content*, pour que Hugo puisse le retrouver et l'injecter dans la page. 
+Enfin, on a créé le fichier Markdown `_index.md`, c'est à dire le fichier de contenu, pour notre page d'accueil. On le place bien dans le dossier `content`, pour que Hugo puisse le retrouver et l'injecter dans la page. 
 
 
 Avant d'aller plus loin, sauvegardons notre travail. 
