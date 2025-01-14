@@ -3,6 +3,9 @@ title = 'Template'
 enableEmoji = true
 defaultContentLanguage = 'fr'
 
+[security]
+  enableInlineShortcodes = false
+
 [menus]
   [[menus.header]]
     name = 'Accueil'
