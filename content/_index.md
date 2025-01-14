@@ -343,3 +343,129 @@ Avec un peu de CSS basique et nos deux partials, notre site commence (presque) �
 
 
 On peut faire un nouveau commit pour sauvegarder notre travail. Pensez à le faire de temps à temps, une fois que vous avez ajouter des fichiers ou modifier du contenu de manière significative.
+
+
+## Ajouter des pages
+
+
+Pour ajouter des pages dans notre site, il faut que l'on créer un dossier dans `content` avec le nom que l'on souhaite donner à la page. Si l'on veut créer une page Contact, on créer un dossier `contact`. Dans ce nouveau dossier, il faut également créer un fichier `index.md` (sans underscore). Notre structure ressemble à ceci : 
+
+
+![Ajout des dossiers pages](/page-contact-structure.png "Ajout des dossiers pages")
+
+
+De cette manière, notre page va avoir un contenu différent de notre page d'accueil, mais toujours se construire à partir de notre fichier `baseof.html`. Cependant, si l'on veut ajuster certain élément qui ne sont pas du contenu, comme ajouter un formulaire par exemple, il faut créer un nouveau modèle.
+
+
+On veut cela dit que ce modèle se base sur le template de base `baseof.html`. Pour cela, on le créer dans le dossier `layout > _default`, de la même manière que pour `home.html`. Dans `contact.html`, j'ajoute donc le code suivant :
+
+
+```html
+{{ define "main" }}
+    {{ .Content }}
+    <form action="#">
+        <input type="text" value="Votre message">
+        <input type="submit" value="Envoyer">
+    </form>
+    <a class="btn" href='/'>Retour à l'accueil</a>
+{{ end }}
+```
+
+
+À la suite de notre injection de contenu, on créer un petit formulaire de contact et un lien vers la page d'accueil. On remarque que le lien est fait en référencent la racine du site avec *`/`*. 
+
+
+Il faut enfin ajouter du contenu à notre page, en passant par le fichier Markdown correspondant dans le dossiers `content > contact`, c'est à dire avec le même nom que notre page. Voilà un exemple de contenu : 
+
+
+```markdown
+---
+title: "Page d'accueil"
+layout: "contact"
+url: "/contact/"
+---
+
+# Discutons ensemble :smile:
+Je suis à votre écoute pour réaliser votre projet !
+```
+
+
+C'est le bon moment pour introduire le fonctionnement des fichiers Markdown. Vous l'avez sans doute remarqué plus haut, on a ajouté du contenu entre des blocs `---` en haut de nos fichiers .md. C'est le contenu [Frontmatter](https://frontmatter.codes/docs) de notre page. Il nous permet de définir tout un collection d'information relative à la page, que l'on pourra ensuite piloter via notre CMS plus tard. On reviendra un peu plus en détail sur cette partie plus tard, quand on abordera la création des projets. 
+
+
+Pour le moment, il faut noter que pour que notre page affiche bien le bon contenu, il faut lui préciser le layout que l'on veut qu'elle utilise, ainsi que son url. 
+
+
+`layout: "contact"`\
+`url: "/contact/"`
+
+
+> Les émojis ne sont pas activés par défaut dans un site Hugo, il faut le définir dans le fichier de configuration `hugo.toml` ou `config.toml`. Plus d'infos ici : [gohugo.io/quick-reference/emojis/](https://gohugo.io/quick-reference/emojis/)
+
+
+Pour finir, il faut que l'on ajoute un lien vers notre page contact sur notre page d'accueil afin de pouvoir l'atteindre. On a ici deux choix : 
+
+
+* on ajoute un lien dans le fichier `home.html` via une balise `a`, de la même manière que dans la page `contact.html` que l'on vient de créer.
+* On ajoute un lien dans le fichier `_index.md`, c'est à dire le contenu de notre page d'accueil. 
+
+
+Ce choix va dépendre de notre usage et de notre situation, mais ici, il est plus logique que le lien soit directement dans le contenu de la page (et ça nous permet de voir comment ajouter un lien et une classe en Markdown). 
+
+
+Dans `_index.md` donc : 
+
+
+```markdown
+---
+title: "Page d'accueil"
+---
+
+# Bonjour internet
+Voilà le contenu de la page d'accueil, qui vient de `content/_index.md` !
+
+[Contactez moi](/contact/ "Contactez moi")
+{.btn}
+```
+
+
+Ajouter un lien en Markdown est relativement simple comme vous pouvez le voir. La structure est toujours : \
+`[infobulle](/url/ "text du lien")`
+
+
+Dans cet exemple, j'ai indiqué le lien moi même, mais il est possible de laisser Hugo générer lui même le lien en utilisant une de ces nombreuses fonctions. On peut modifier le code de la manière suivante :
+
+
+`[Contactez moi]({{< ref "contact" >}} "Contactez moi")`
+
+
+Ici, `{{< ref "contact" >}}` appelle la fonction `ref` de Hugo, qui retourne le lien absolue de notre page. 
+
+
+Pour ajouter une classe ou un ID à un élément, il suffit de le définir entre accoladent sous cet élément (à l'exception des titre Hn et des blocs de code, [plus de détail dans la documentation à ce sujet](https://gohugo.io/content-management/markdown-attributes/#usage)). Cependant, il n'est pas possible d'ajouter directement une classe sur un bouton. Dans notre cas, j'ajoute du morceau de code `{.btn}` créer une balise `<p>` englobant notre lien. Il faut donc le prendre en compte dans notre CSS. 
+
+
+L'idéal est de définir un style par défaut pour les liens issus d'un bloc de contenu provenant d'un fichier markdown qui ne requiert pas d'ajout de classe, et j'ajouter les liens différents via des partials. 
+
+
+> L'ajout de classe dans les fichiers .md n'est pas activé par défaut dans Hugo, il faut ajouter dans le fichier `hugo.toml` ou `config.toml` le contenu suivant : 
+>
+> ```toml
+> [markup]
+>   [markup.goldmark]
+>     [markup.goldmark.parser]
+>       [markup.goldmark.parser.attribute]
+>         block = true
+>         title = true
+> ```
+>
+> Plus d'info dans la documentation ici : [gohugo.io/content-management/markdown-attributes/#block-elements](https://gohugo.io/content-management/markdown-attributes/#block-elements)
+
+
+Il ne reste plus qu'a ajouter un peu de CSS, de relancer notre serveur et de naviguer jusqu'à notre superbe page de contact ! 
+
+
+![Notre page de contact fonctionne](/page-contact-.png "Notre page de contact fonctionne")
+
+
+On oublie pas de commit notre travail sur GitHub, et on continu. 
