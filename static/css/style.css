@@ -43,7 +43,7 @@ blockquote {
     font-family: sans-serif;
 }
 
-code:not(:has(pre)) {
+code {
     background-color: lightgray;
     padding: .3em;
     border-radius: .3em;
@@ -52,7 +52,7 @@ code:not(:has(pre)) {
 
 pre>code {
     padding: 1em;
-    border-radius: .3em;
+    background-color: transparent;
 }
 
 img {
