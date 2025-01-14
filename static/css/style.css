@@ -1,29 +1,60 @@
-* {
-    
-}
 body {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
     margin: 0;
-    background-color: aquamarine;
+    background-color: floralwhite;
 }
+
 main {
     margin: 0 auto;
     padding: 2rem;
-    text-align: center;  
+    text-align: left;
+    max-width: 70ch;
+    overflow: hidden;
 }
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+    position: relative;
+}
+h2::before {
+    content: "# ";
+}
+
+h3 {
+    position: relative;
+}
+h3::before {
+    content: "* ";
+}
+
+blockquote {
+    margin: 0;
+    padding: 1.5em;
+    border: solid 1px gray;
+    border-radius: .3em;
+}
+
 :not(code) {
     font-family: sans-serif;
 }
-code {
+
+code:not(:has(pre)) {
     background-color: lightgray;
     padding: .3em;
     border-radius: .3em;
+    display: inline-block;
 }
-pre > code {
+
+pre>code {
     padding: 1em;
+    border-radius: .3em;
 }
+
 img {
     border-radius: .3em;
 }
