@@ -438,11 +438,9 @@ Ajouter un lien en Markdown est relativement simple comme vous pouvez le voir. L
 Dans cet exemple, j'ai indiqué le lien moi même, mais il est possible de laisser Hugo générer lui même le lien en utilisant une de ces nombreuses fonctions. On peut modifier le code de la manière suivante :
 
 
-<pre>
-  <code>
-    [Contactez moi]({{<ref "contact" >}} "Contactez moi")
-  </code>
-</pre>
+```html
+  [Contactez moi]({{<ref "contact" >}} "Contactez moi")
+```
 
 
 Ici, on fait appelle la fonction `ref` de Hugo, qui retourne le lien absolue de notre page. 
