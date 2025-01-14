@@ -1,5 +1,5 @@
 ---
-title: "Accueil"
+title: "Tutoriel Hugo"
 ---
 
 # Création d'un portfolio simple en prenant avantage de la JamStack.
