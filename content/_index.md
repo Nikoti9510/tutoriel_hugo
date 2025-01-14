@@ -438,10 +438,10 @@ Ajouter un lien en Markdown est relativement simple comme vous pouvez le voir. L
 Dans cet exemple, j'ai indiqué le lien moi même, mais il est possible de laisser Hugo générer lui même le lien en utilisant une de ces nombreuses fonctions. On peut modifier le code de la manière suivante :
 
 ```markdown
-[Contactez moi]({{\< ref "contact" \>}} "Contactez moi")
+[Contactez moi]({{&#12296 ref "contact" &#12297}} "Contactez moi")
 ```
 
-Ici, `{{\< ref "contact" \>}}` appelle la fonction `ref` de Hugo, qui retourne le lien absolue de notre page. 
+Ici, `{{\&#12296 ref "contact" &#12297}}` appelle la fonction `ref` de Hugo, qui retourne le lien absolue de notre page. 
 
 
 Pour ajouter une classe ou un ID à un élément, il suffit de le définir entre accoladent sous cet élément (à l'exception des titre Hn et des blocs de code, [plus de détail dans la documentation à ce sujet](https://gohugo.io/content-management/markdown-attributes/#usage)). Cependant, il n'est pas possible d'ajouter directement une classe sur un bouton. Dans notre cas, j'ajoute du morceau de code `{.btn}` créer une balise `<p>` englobant notre lien. Il faut donc le prendre en compte dans notre CSS. 
