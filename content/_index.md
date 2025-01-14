@@ -348,6 +348,7 @@ Avec un peu de CSS basique et nos deux partials, notre site commence (presque) �
 ![Le site avec les partials et le CSS](/le-site-avec-les-partials-et-le-css-v2.png "Le site avec les partials et le CSS")
 
 
+
 On peut faire un nouveau commit pour sauvegarder notre travail. Pensez à le faire de temps à temps, une fois que vous avez ajouter des fichiers ou modifier du contenu de manière significative.
 
 
