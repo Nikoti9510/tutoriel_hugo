@@ -53,8 +53,11 @@ blockquote {
 code {
     background-color: lightgray;
     padding: 0 .3em;
-    border-radius: .3em;
     display: inline-block;
+}
+
+pre, code {
+    border-radius: .3em;
 }
 
 pre>code {
