@@ -4,7 +4,7 @@ enableEmoji = true
 defaultContentLanguage = 'fr'
 
 [security]
-  enableInlineShortcodes = false
+  enableInlineShortcodes = true
 
 [menus]
   [[menus.header]]
