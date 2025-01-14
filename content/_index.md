@@ -396,8 +396,10 @@ C'est le bon moment pour introduire le fonctionnement des fichiers Markdown. Vou
 Pour le moment, il faut noter que pour que notre page affiche bien le bon contenu, il faut lui préciser le layout que l'on veut qu'elle utilise, ainsi que son url. 
 
 
-`layout: "contact"`\
-`url: "/contact/"`
+```markdown
+layout: "contact"`
+`url: "/contact/"
+```
 
 
 > Les émojis ne sont pas activés par défaut dans un site Hugo, il faut le définir dans le fichier de configuration `hugo.toml` ou `config.toml`. Plus d'infos ici : [gohugo.io/quick-reference/emojis/](https://gohugo.io/quick-reference/emojis/)
@@ -435,9 +437,9 @@ Ajouter un lien en Markdown est relativement simple comme vous pouvez le voir. L
 
 Dans cet exemple, j'ai indiqué le lien moi même, mais il est possible de laisser Hugo générer lui même le lien en utilisant une de ces nombreuses fonctions. On peut modifier le code de la manière suivante :
 
-
-`[Contactez moi]({{< ref "contact" >}} "Contactez moi")`
-
+```markdown
+[Contactez moi]({{< ref "contact" >}} "Contactez moi")
+```
 
 Ici, `{{< ref "contact" >}}` appelle la fonction `ref` de Hugo, qui retourne le lien absolue de notre page. 
 
