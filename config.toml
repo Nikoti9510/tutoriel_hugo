@@ -1,4 +1,4 @@
-baseURL = 'https://hugo-template-portfolio.netlify.app/'
+baseURL = 'https://tutoriel-hugo-jamstack.netlify.app/'
 title = 'Template'
 enableEmoji = true
 defaultContentLanguage = 'fr'

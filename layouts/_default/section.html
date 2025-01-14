@@ -1,6 +1,0 @@
-{{ define "main" }}
-    {{ .Content }}
-    {{ range where .Site.RegularPages.ByDate.Reverse "Type" "projets" }}
-        <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> - {{.Date | time.Format ":date_medium"}}</h2>
-    {{ end }}
-{{ end }}
