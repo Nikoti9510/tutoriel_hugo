@@ -64,3 +64,59 @@ Et voilà, on est prêt à travailler ! On pourrait s'arrêter là et faire un s
 
 
 ***Avant de continuer, fermez GitHub Desktop et Visual Studio Code.***
+
+## Installation de Go, Hugo et Git
+
+
+Oui je sais, j'ai écris plus haut qu'on n'aurait pas besoin de travailler avec Git. j'ai un tout petit peut menti, mais promis c'est très simple ! Et surtout, ce n'est que pour l'étape d'installation et d'initialisation du projet. Ensuite, on travaille uniquement avec la version Desktop (mais comme Git sera installé, si l'envie vous prend d'aller plus loin, c'est possible).
+
+
+### Installer GO et Hugo
+
+
+Commençons par nous rendre sur [](gohugo.io/installation/)[gohugo.io/installation/](<>) et cliquez sur l'option correspondant à votre navigateur. Pour ce tutoriel, je vais suivre les étapes correspondant à Windows (c'est plus simple pour MacOS). 
+
+
+Dans un premier temps, il nous faut installer [Go](https://go.dev/doc/install), le langage de programmation dans lequel Hugo est écrit. Pas de panique, nous n'aurons pas besoin d'apprendre un nouveau langage pour ce projet, il est simplement nécessaire de l'installer sur notre machine pour installer Hugo. Télécharger l'exécutable pour Windows et suivez les instructions de l'installateur. 
+
+
+![Choisir le bon exécutable pour installer Go](/go.png "Choisir le bon exécutable pour installer Go")
+
+
+Vous pouvez changer l'emplacement de l'installation sans problème lors de l'installation. 
+
+
+![Changement de l'emplacement d'installation de Go](/go_2.png "Changement de l'emplacement d'installation de Go")
+
+
+Une fois l'installation terminé, on ouvre une invite de commande (Windows + R et sélectionner `cmd` ou cliquer sur le menu démarrer et chercher `cmd`). Taper dans le console la ligne `Go version` pour constater que l'installation est bien réussit. 
+
+
+![Go est bien installé sur cette machine](/go_3.png "Go est bien installé sur cette machine")
+
+
+Dans la même console, on peut maintenant copier la commande suivante pour installer Hugo : 
+
+
+`go install github.com/gohugoio/hugo@latest`
+
+
+### Installer Git
+
+
+Rendez vous sur le [site de git pour Windows](https://git-scm.com/downloads/win) pour télécharger la dernière version en cliquant sur le premier lien. Il fois le téléchargement terminé, lancez l'exécutable et suivez les instructions. Voilà, c'est terminé. Pour le moment, pas si terrible.
+
+
+## Création du site avec Hugo
+
+
+Une fois que l'installation est terminé, on est prêt à créer notre site ! Pour ça, on réouvre GitHub Desktop et notre projet dans Visual Studio Code. Une fois dans VScode, on va dans `Terminal > New Terminal`.
+
+
+![Ouvrir un terminal dans Visual Studio Code](/terminal.png "Ouvrir un terminal dans Visual Studio Code")
+
+
+Dans le terminal qui s'est ouvert en bas de l'éditeur, on va pouvoir maintenant gérer notre site avec Hugo. Pour cela, rien de plus simple, il suffit de taper la ligne de commande suivante : 
+
+
+`Hugo new site NOM_DU_SITE`
