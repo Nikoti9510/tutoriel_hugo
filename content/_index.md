@@ -120,3 +120,35 @@ Dans le terminal qui s'est ouvert en bas de l'éditeur, on va pouvoir maintenant
 
 
 `Hugo new site NOM_DU_SITE`
+
+Remplacer NOM_DU_SITE par le nom de votre choix (sans espaces ni caractères spéciaux).
+
+
+![La création du site est terminé dans VScode](/hugo-new-site.png "La création du site est terminé dans VScode")
+
+
+On constate une fois la création du site terminé, que des dossiers et fichiers ont été ajoutés dans notre projet. À partir de là, deux choix s'offre à nous. Le premier, c'est d'installer un thème compatible avec Hugo. Le deuxième, continuer notre projet en partant de zéro. Pour ce tutoriel et dans un soucis de d'exhaustivité, je vais vous montrer comment installer un de ces thèmes. Mais nous continuerons ensuite notre projet sans, afin de n'utiliser que ce qui est nécessaire et pour bien comprendre le fonctionnement de Hugo.
+
+
+## Installer un thème
+
+
+Hugo propose une [collection de thème gratuit sur son site](https://themes.gohugo.io/), et il est également possible d'en trouver des plus complets sur d'autres sites, comme par exemple [gethugothemes.com](https://gethugothemes.com/products) ou [anvodstudio.com](https://anvodstudio.com/hugo-themes/). Pour l'exemple, j'ai choisi le thème [PaperMod](https://themes.gohugo.io/themes/hugo-papermod/). Pour l'installer, rien de compliqué, il suffit de se rendre sur le page Github du thème (en cliquant sur le bouton "Download" dans la page du thème) et de copier la commande pour installer le submodule dans le terminal de VScode. Pour PaperMod, voilà la commande : 
+
+
+`git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod`
+
+
+> /!\ Il faut s'assurer que l'on se trouve à la racine de notre projet avant d'exécuter la commande. Dans le terminal, le chemin devrait être "GitHub\tutoriel_portfolio". Si ce n'est pas le cas, il faut s'y rendre. Utiliser `cd Nom_du_dossier` vous permet de vous rendre à cette endroit. Utilisez `ls` vous permet de lister tout les dossiers en enfant de celui dans lequel vous êtes. Utilisez `cd ..` vous permet de remonter un niveau. 
+
+
+Une fois la commande lancé et le thème téléchargé, il ne reste plus qu'a indiquer à Hugo que nous souhaitons utiliser ce thème. Pour cela, il faut se rendre dans le fichier de configuration `config.toml` (ou `hugo.toml` cela les cas) et d'ajouter la ligne suivante dans le fichier : 
+
+
+`theme = ["PaperMod"]`
+
+
+![Choix du template dans le fichier Hugo.toml](/hugo_toml.png "Choix du template dans le fichier Hugo.toml")
+
+
+Et voila ! Le template est chargé et on peut le prévisualiser sur le serveur de test, mais on va voir ensemble comment faire cela juste après, en partant de notre projet vierge. 
