@@ -494,7 +494,7 @@ Maintenant que notre site possède une structure (certes basique), on va pouvoir
 3. **weight** : qui correspond au poids de la page dans le menu. Plus un élément a un poids léger, plus il est affiché tôt dans le menu.  
 
 
-   Mettre en place le CMS pour la backoffice
+## Mettre en place le CMS pour la backoffice
 
 
 Il existe d'autres [options de menu que vous pouvez consulter dans le documentation](https://gohugo.io/content-management/menus/). 
