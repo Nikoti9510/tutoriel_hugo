@@ -405,7 +405,7 @@ Pour le moment, il faut noter que pour que notre page affiche bien le bon conten
 
 
 `layout: "contact"`\
-`url: "/contact/`
+`url: "/contact/"`
 
 
 > Les émojis ne sont pas activés par défaut dans un site Hugo, il faut le définir dans le fichier de configuration `hugo.toml` ou `config.toml`. Plus d'infos ici : [gohugo.io/quick-reference/emojis/](https://gohugo.io/quick-reference/emojis/)
