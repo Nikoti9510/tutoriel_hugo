@@ -199,3 +199,65 @@ Pour le moment, il y a 3 dossiers qui nous intéresses :
 
 
 Pour plus de détails sur la structure de Hugo, consulter la documentation à ce sujet : [gohugo.io/getting-started/directory-structure/#directories](https://gohugo.io/getting-started/directory-structure/#directories)
+
+
+Pour que notre site puisse fonctionner, il y quelques étapes à suivre : 
+
+
+1. Créer un dossier `_default` dans `layouts`.
+2. Dans `_default`, créer un fichier `home.html` avec le contenu suivant :
+
+
+   ```html
+   {{ define "main" }}
+       {{ .Content }}
+   {{ end }}
+   ```
+3. Toujours `layouts > _default`, créer un fichier `baseof.html` avec le contenu suivant :
+
+
+	```html
+     <html lang="{{ site.Language }}">
+     <body>
+       <main>
+         {{ block "main" . }}{{ end }}
+       </main>
+     </body>
+     </html>
+   ```
+4. enfin, dans le dossier *content*, ajouter un fichier `_index.md` avec le contenu suivant : 
+	```markdown
+	---
+	title: "Page d'accueil"
+	---
+	
+	# Bonjour internet
+	Voilà le contenu de la page d'accueil, qui vient de `content/_index.md`!
+	```
+
+
+Voilà à quoi ressemble la structure après la création.
+
+
+![Création des nouveaux fichiers](/structure-v2.png "Création des nouveaux fichiers")
+
+
+Si on relance notre serveur de test, on constate bien que du contenu s'affiche ! 
+
+
+![La page affiche bien du contenu](/le-site-fonctionne-v2.png "la page affiche bien du contenu")
+
+
+Expliquons ce que l'on vient de faire : 
+
+
+On créer un fichier `home.html` qui correspond à notre page d'accueil et on l'ajoute dans le dossier `layouts > _default` afin que Hugo le trouve. Dans ce fichier, on défini un bloc que l'on appelle `main` dans lequel on ajoute le contenu de la page, `Content`. Ce contenu est récupéré automatiquement par Hugo dans le fichier `_index.md`, si celle-ci existe dans le dossier content. On a également ajouté une balise HTML, qui elle sera statique et ne dépendra pas du contenu de la page. 
+
+
+On a ensuite défini dans notre dossier `_defaut` le template de page pour toute nos pages, qui se nomme toujours `baseof.html`. C'est cette page qui est toujours utilisé par Hugo pour assembler nos pages (il est possible d'en définir plusieurs en cas de besoin, voir [gohugo.io/templates/lookup-order](https://gohugo.io/templates/lookup-order/)). Pour le moment, notre fichier `baseof.html` est très simple, mais on va venir l'améliorer un peu plus tard. 
+
+
+Enfin, on créer le fichier Markdown `_index.md`, c'est à dire le fichier de contenu, pour notre page. On le place bien dans le dossier *content*, pour que Hugo puisse le retrouver et l'injecter dans la page. 
+
+
+Avant d'aller plus loin, sauvegardons notre travail. 
