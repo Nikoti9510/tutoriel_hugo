@@ -14,11 +14,11 @@ main {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 3.5em;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     position: relative;
 }
 h2::before {
@@ -26,10 +26,16 @@ h2::before {
 }
 
 h3 {
+    font-size: 1.8em;
     position: relative;
 }
 h3::before {
     content: "* ";
+}
+
+p {
+    line-height: 1.4;
+    font-size: 1.1em;
 }
 
 blockquote {
@@ -41,6 +47,7 @@ blockquote {
 
 :not(code) {
     font-family: sans-serif;
+    text-wrap: pretty;
 }
 
 code {
