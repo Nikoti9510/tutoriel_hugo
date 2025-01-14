@@ -261,3 +261,85 @@ Enfin, on créer le fichier Markdown `_index.md`, c'est à dire le fichier de co
 
 
 Avant d'aller plus loin, sauvegardons notre travail. 
+
+## Pousser les fichiers locaux sur Github
+
+
+On se rend dans GitHub Desktop, et on remarque que plusieurs fichiers sont ajoutés dans la liste des modifications. Pour pouvoir les envoyer sur notre RepoGitHub™, il faut donner un nom à notre commit. Quelques choses dans la veine de "Premier push" fera l'affaire. Vous pouvez ajouter une descriptions si l'envie vous prend. Essayez d'être clair et précis dans vos noms de push, car vous pourrez les retrouver dans Github et revenir en arrière quand les bugs vont inévitablement apparaitre.  
+
+
+![Le premier push sur notre répertoire GitHub](/premier-push-github.png "Le premier push sur notre répertoire GitHub")
+
+
+On clique ensuite sur "Commit to main" en bas de la fenêtre. Il ne reste plus qu'a publier le commit sur le projet, pour cela, on clique sur "Publish branch". 
+
+
+![Publier le commit en ligne](/publier-la-branch-en-ligne.png "Publier le commit en ligne")
+
+
+Une fois cela fait et le chargement effectué, on peut bien retrouver notre travail sur notre espace GitHub en ligne. 
+
+
+![Notre projet sur le dashboard GitHub](/premier-push-sur-le-dahsboard-github.png "Notre projet sur le dashboard GitHub")
+
+
+Améliorons un peu notre site.
+
+
+## Mettre en place des sections avec les Partials
+
+
+Comme on l'a dit plus haut, Hugo nous permet de mettre en place des sous éléments ou sections qui vont nous permettre de réutiliser les bout de code à plusieurs endroits de notre site. Dans notre template par défaut `baseof.html`, ajoutons le code suivant : 
+
+
+![Ajout de partials dans le layout de base](/partials-dans-baseof.png "Ajout de partials dans le layout de base")
+
+
+On a ajouté dans notre page de partials, `head.html` et `footer.html`. La syntaxe est toujours : 
+
+
+```html
+{{ partials "chemin/du/partial.html" . }}
+```
+
+
+> [](https://gohugo.io/getting-started/directory-structure/#directories)Concernant le `.` que l'on ajoute après le chemin (et que l'on remarque aussi dans l'appel du block `main`), il représente le contexte. Je ne rentre pas dans le détail ici, mais il est indispensable au bon fonctionnement du partial. Plus d'info sur la [documentation du contexte](https://gohugo.io/templates/introduction/#context) dans Hugo et des [partials](https://gohugo.io/templates/partial/). 
+
+
+Il faut maintenant créer les fichiers pour que Hugo puisse les charger. Pour cela, on créer un dossier `partials` dans le dossiers `layouts`*.* On peut créer nos deux partials ici et on se retrouve avec la structure suivante : 
+
+
+![Le dossier des partials](/dossier-partials.png "Le dossier des partials")
+
+
+Dans nos partials, on construit notre élément avec uniquement ce qui est nécessaire à son fonctionnement. par exemple, créons un `footer` très simple avec le contenu suivant : 
+
+
+```html
+<p>Le footer de mon site - 2025</p>
+```
+
+
+Pour notre `head`, ajoutons un tout petit peu plus de contenu : 
+
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ .Title }}</title>
+<link rel="stylesheet" href="/css/style.css">
+```
+
+
+Dans la balise `title`, on fait référence au titre de la page active, en faisant appel au contexte (avec le symbole `.`) de la page. La valeur de ce titre est récupéré dans le fichier Markdown correspondant. Il changera donc en fonction de la page dans lequel on se trouve. 
+
+
+On a également ajouté un lien vers un fichier CSS. Celui-ci doit être ajouté dans le dossier `static` de notre projet (dans cette exemple, on a donc `static > css > style.css`). Le contenu de ce dossier est chargé tel quel lors de la construction du site, mais le dossier lui n'est pas ajouté ! Il ne faut donc pas l'ajouter dans le chemin (j'ai perdu quelques cheveux à comprendre ça). 
+
+
+Avec un peu de CSS basique et nos deux partials, notre site commence (presque) à ressembler à quelque chose.
+
+
+![Le site avec les partials et le CSS](/le-site-avec-les-partials-et-le-css-v2.png "Le site avec les partials et le CSS")
+
+
+On peut faire un nouveau commit pour sauvegarder notre travail. Pensez à le faire de temps à temps, une fois que vous avez ajouter des fichiers ou modifier du contenu de manière significative.
