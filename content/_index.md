@@ -461,7 +461,7 @@ L'idéal est de définir un style par défaut pour les liens issus d'un bloc de 
 Il ne reste plus qu'a ajouter un peu de CSS, de relancer notre serveur et de naviguer jusqu'à notre superbe page de contact ! 
 
 
-![Notre page de contact fonctionne](/page-contact-.png "Notre page de contact fonctionne")
+![Notre page de contact fonctionne](/page-contact.png "Notre page de contact fonctionne")
 
 
 On oublie pas de commit notre travail sur GitHub, et on continu. 
