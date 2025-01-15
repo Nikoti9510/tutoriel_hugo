@@ -68,7 +68,7 @@ Et voilà, vous êtes prêt à travailler ! On pourrait s'arrêter là et faire 
 ## Installation de Go, Hugo et Git
 
 
-Oui je sais, j'ai écris plus haut qu'on n'aurait pas besoin de travailler avec Git. j'ai un tout petit peut menti, mais promis c'est très simple ! Et surtout, ce n'est que pour l'étape d'installation et d'initialisation du projet. Ensuite, on travaille uniquement avec la version Desktop (mais comme Git sera installé, si l'envie vous prend d'aller plus loin, c'est possible).
+Oui je sais, ***GIT*** ! Mais c'est pas si terrible vous allez voir. Surtout, ce n'est que pour l'étape d'installation et d'initialisation du projet. Ensuite, on travaille uniquement avec la version Desktop (mais comme Git sera installé, si l'envie vous prend d'aller plus loin, c'est possible).
 
 
 ### Installer GO et Hugo
