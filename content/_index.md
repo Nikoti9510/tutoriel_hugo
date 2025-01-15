@@ -265,37 +265,37 @@ Avant d'aller plus loin, sauvegardons notre travail.
 ## Pousser les fichiers locaux sur Github
 
 
-On se rend dans GitHub Desktop, et on remarque que plusieurs fichiers sont ajoutés dans la liste des modifications. Pour pouvoir les envoyer sur notre RepoGitHub™, il faut donner un nom à notre commit. Quelques choses dans la veine de "Premier push" fera l'affaire. Vous pouvez ajouter une descriptions si l'envie vous prend. Essayez d'être clair et précis dans vos noms de push, car vous pourrez les retrouver dans Github et revenir en arrière quand les bugs vont inévitablement apparaitre.  
+RSi on se rend dans GitHub Desktop, on remarque que plusieurs fichiers sont ajoutés dans la liste des modifications. Pour pouvoir les envoyer sur votre RepoGitHub™, il faut donner un nom à votre commit. Quelques choses dans la veine de "Premier push" fera l'affaire. Vous pouvez ajouter une description si l'envie vous prend. Essayez d'être clair et précis dans vos noms de push, car vous pourrez les retrouver dans Github et revenir en arrière quand des bugs vont inévitablement apparaitre.  
 
 
 ![Le premier push sur notre répertoire GitHub](/premier-push-github.png "Le premier push sur notre répertoire GitHub")
 
 
-On clique ensuite sur "Commit to main" en bas de la fenêtre. Il ne reste plus qu'a publier le commit sur le projet, pour cela, on clique sur "Publish branch". 
+Cliquez ensuite sur "Commit to main" en bas de la fenêtre. Il ne reste plus qu'a publier le commit sur le projet, pour cela, cliquez sur "Publish branch". 
 
 
 ![Publier le commit en ligne](/publier-la-branch-en-ligne.png "Publier le commit en ligne")
 
 
-Une fois cela fait et le chargement effectué, on peut bien retrouver notre travail sur notre espace GitHub en ligne. 
+Une fois cela fait et le chargement effectué, vous pouvez voir votre travail dans votre espace GitHub en ligne. 
 
 
 ![Notre projet sur le dashboard GitHub](/premier-push-sur-le-dahsboard-github.png "Notre projet sur le dashboard GitHub")
 
 
-Améliorons un peu notre site.
+Améliorons maintenant un peu le site.
 
 
 ## Mettre en place des sections avec les Partials
 
 
-Comme on l'a dit plus haut, Hugo nous permet de mettre en place des sous éléments ou sections qui vont nous permettre de réutiliser les bout de code à plusieurs endroits de notre site. Dans notre template par défaut `baseof.html`, ajoutons le code suivant : 
+Comme je l'ai noté plus haut, Hugo nous permet de mettre en place des sous éléments ou sections, qui vont nous permettre de réutiliser des portions de code à plusieurs endroits de notre site. Dans notre template par défaut `baseof.html`, ajoutons le code suivant : 
 
 
 ![Ajout de partials dans le layout de base](/partials-dans-baseof.png "Ajout de partials dans le layout de base")
 
 
-On a ajouté dans notre page de partials, `head.html` et `footer.html`. La syntaxe est toujours : 
+On a ajouté dans notre page deux partials, `head.html` et `footer.html`. La syntaxe est toujours : 
 
 
 ```html
@@ -306,13 +306,13 @@ On a ajouté dans notre page de partials, `head.html` et `footer.html`. La synta
 > [](https://gohugo.io/getting-started/directory-structure/#directories)Concernant le `.` que l'on ajoute après le chemin (et que l'on remarque aussi dans l'appel du block `main`), il représente le contexte. Je ne rentre pas dans le détail ici, mais il est indispensable au bon fonctionnement du partial. Plus d'info sur la [documentation du contexte](https://gohugo.io/templates/introduction/#context) dans Hugo et des [partials](https://gohugo.io/templates/partial/). 
 
 
-Il faut maintenant créer les fichiers pour que Hugo puisse les charger. Pour cela, on créer un dossier `partials` dans le dossiers `layouts`*.* On peut créer nos deux partials ici et on se retrouve avec la structure suivante : 
+Il faut maintenant créer les fichiers pour que Hugo puisse les charger. Pour cela, on ajoute un dossier `partials` dans le dossier `layouts`. On peut créer nos deux partials ici et on se retrouve avec la structure suivante : 
 
 
 ![Le dossier des partials](/dossier-partials.png "Le dossier des partials")
 
 
-Dans nos partials, on construit notre élément avec uniquement ce qui est nécessaire à son fonctionnement. par exemple, créons un `footer` très simple avec le contenu suivant : 
+Dans nos partials, on construit notre élément avec uniquement ce qui est nécessaire à son fonctionnement. par exemple, créons un `footer` très simple : 
 
 
 ```html
@@ -354,10 +354,7 @@ Pour ajouter des pages dans notre site, il faut que l'on créer un dossier dans 
 ![Ajout des dossiers pages](/page-contact-structure.png "Ajout des dossiers pages")
 
 
-De cette manière, notre page va avoir un contenu différent de notre page d'accueil, mais toujours se construire à partir de notre fichier `baseof.html`. Cependant, si l'on veut ajuster certain élément qui ne sont pas du contenu, comme ajouter un formulaire par exemple, il faut créer un nouveau modèle.
-
-
-On veut cela dit que ce modèle se base sur le template de base `baseof.html`. Pour cela, on le créer dans le dossier `layout > _default`, de la même manière que pour `home.html`. Dans `contact.html`, j'ajoute donc le code suivant :
+De cette manière, notre page va avoir un contenu différent de notre page d'accueil, mais toujours se construire à partir de notre fichier `baseof.html`. On peut également lui ajouter des éléments statiques différents et unique à cette page. Dans `contact.html`, ajoutez le code suivant :
 
 
 ```html
@@ -372,10 +369,10 @@ On veut cela dit que ce modèle se base sur le template de base `baseof.html`. P
 ```
 
 
-À la suite de notre injection de contenu, on créer un petit formulaire de contact et un lien vers la page d'accueil. On remarque que le lien est fait en référencent la racine du site avec *`/`*. 
+À la suite de notre injection de contenu, on créer un petit formulaire de contact et un lien vers la page d'accueil. On remarque que le lien est fait en référencent la racine du site avec `/`. 
 
 
-Il faut enfin ajouter du contenu à notre page, en passant par le fichier Markdown correspondant dans le dossiers `content > contact`, c'est à dire avec le même nom que notre page. Voilà un exemple de contenu : 
+Il faut enfin ajouter du contenu à notre page, en passant par le fichier Markdown correspondant dans le dossiers `content > contact`, c'est à dire avec le même nom que notre nouvelle page. Voilà un exemple de contenu : 
 
 
 ```markdown
@@ -385,21 +382,13 @@ layout: "contact"
 url: "/contact/"
 ---
 
+
 # Discutons ensemble :smile:
 Je suis à votre écoute pour réaliser votre projet !
 ```
 
 
-C'est le bon moment pour introduire le fonctionnement des fichiers Markdown. Vous l'avez sans doute remarqué plus haut, on a ajouté du contenu entre des blocs `---` en haut de nos fichiers .md. C'est le contenu [Frontmatter](https://frontmatter.codes/docs) de notre page. Il nous permet de définir tout un collection d'information relative à la page, que l'on pourra ensuite piloter via notre CMS plus tard. On reviendra un peu plus en détail sur cette partie plus tard, quand on abordera la création des projets. 
-
-
-Pour le moment, il faut noter que pour que notre page affiche bien le bon contenu, il faut lui préciser le layout que l'on veut qu'elle utilise, ainsi que son url. 
-
-
-```markdown
-layout: "contact"`
-`url: "/contact/"
-```
+C'est le bon moment pour introduire le fonctionnement des fichiers Markdown. Vous l'avez sans doute remarqué plus haut, on a ajouté du contenu entre des blocs `---` en haut de nos fichiers `.md`. C'est le contenu [Frontmatter](https://frontmatter.codes/docs) de notre page. Il nous permet de définir toute une collection d'information relative à la page, que l'on pourra ensuite piloter via notre CMS plus tard. On reviendra un peu plus en détail sur cette partie plus tard, quand on abordera la création des projets. Ce que l'on peut retenir pour le moment, ce sont les lignes `layout: "contact"` et `url: "/contact/"`. La première spécifie à Hugo de construire la page à partir du fichier `.html` correspondant dans le dossier `layout`. La deuxième définit l'url de notre page.
 
 
 > Les émojis ne sont pas activés par défaut dans un site Hugo, il faut le définir dans le fichier de configuration `hugo.toml` ou `config.toml`. Plus d'infos ici : [gohugo.io/quick-reference/emojis/](https://gohugo.io/quick-reference/emojis/)
@@ -438,10 +427,13 @@ Ajouter un lien en Markdown est relativement simple comme vous pouvez le voir. L
 Dans cet exemple, j'ai indiqué le lien moi même, mais il est possible de laisser Hugo générer lui même le lien en [utilisant un shortcode](https://gohugo.io/methods/shortcode/). 
 
 
-Pour ajouter une classe ou un ID à un élément, il suffit de le définir entre accoladent sous cet élément (à l'exception des titre Hn et des blocs de code, [plus de détail dans la documentation à ce sujet](https://gohugo.io/content-management/markdown-attributes/#usage)). Cependant, il n'est pas possible d'ajouter directement une classe sur un bouton. Dans notre cas, j'ajoute du morceau de code `{.btn}` créer une balise `<p>` englobant notre lien. Il faut donc le prendre en compte dans notre CSS. 
+Pour ajouter une classe ou un ID à un élément, il suffit de le définir entre accolades sous cet élément (à l'exception des titre Hn et des blocs de code, [plus de détail dans la documentation à ce sujet](https://gohugo.io/content-management/markdown-attributes/#usage)). Cependant, il n'est pas possible d'ajouter directement une classe sur un bouton. Dans notre cas, l'ajout du code `{.btn}` créer une balise `<p>` englobant notre lien. Il faut donc le prendre en compte dans notre CSS. 
 
 
-L'idéal est de définir un style par défaut pour les liens issus d'un bloc de contenu provenant d'un fichier markdown qui ne requiert pas d'ajout de classe, et j'ajouter les liens différents via des partials. 
+L'idéal est de définir un style par défaut pour les liens issus d'un bloc de contenu provenant d'un fichier markdown qui ne requiert pas d'ajout de classe, et j'ajouter les liens différents via des partials. Encore mieux, passez par un shortcode permet de définir un structure plus complexe pour des éléments à ajouter dans des fichiers markdown. 
+
+
+***Pour donner une analogie : Les Partials sont des sections, les Shortcodes des widgets. ***
 
 
 > L'ajout de classe dans les fichiers .md n'est pas activé par défaut dans Hugo, il faut ajouter dans le fichier `hugo.toml` ou `config.toml` le contenu suivant : 
@@ -464,13 +456,13 @@ Il ne reste plus qu'a ajouter un peu de CSS, de relancer notre serveur et de nav
 ![Notre page de contact fonctionne](/page-contact.png "Notre page de contact fonctionne")
 
 
-On oublie pas de commit notre travail sur GitHub, et on continu. 
+On oublie pas de commit notre travail sur GitHub, et on continue. 
 
 
 ## Créer un menu de navigation
 
 
-Maintenant que notre site possède une structure (certes basique), on va pouvoir générer notre menu. Pour cela, on va commencer par ce rendre dans notre fichier de configuration `hugo.toml`(ou `config.toml`). En effet, c'est dans ce fichier que l'on définit tout les paramètres communs à tout notre site. La syntaxe est très simple et ce présente comme suit : 
+Maintenant que notre site possède une structure (certes basique), on va pouvoir générer notre menu. Pour cela, rendez-vous dans votre fichier de configuration `hugo.toml`(ou `config.toml`). En effet, c'est dans ce fichier que l'on définit tout les paramètres communs à l'ensemble de notre site. La syntaxe est très simple et se présente comme suit : 
 
 
 ```toml
@@ -486,7 +478,7 @@ Maintenant que notre site possède une structure (certes basique), on va pouvoir
 ```
 
 
- Ici, j'ai défini deux éléments de menu, ajouté dans le menu appelé `header`. c'est un nom arbitraire que j'ai créé pour l'occasion, libre à vous de le nommer différemment (Les majuscules et caractères spéciaux ne fonctionnent pas !). Pour chaque onglet, on a défini :
+ Ici, on définit deux éléments de menu, ajoutés dans le menu `header`. c'est un nom arbitraire, libre à vous de le nommer différemment (Les majuscules et caractères spéciaux ne fonctionnent pas !). Pour chaque onglet, on définit :
 
 
 1. **Name** : qui correspond au texte qui s'affiche sur le site,
@@ -494,13 +486,10 @@ Maintenant que notre site possède une structure (certes basique), on va pouvoir
 3. **weight** : qui correspond au poids de la page dans le menu. Plus un élément a un poids léger, plus il est affiché tôt dans le menu.  
 
 
-## Mettre en place le CMS pour la backoffice
+Il existe d'autres [options de menu que vous pouvez consulter dans la documentation](https://gohugo.io/content-management/menus/). 
 
 
-Il existe d'autres [options de menu que vous pouvez consulter dans le documentation](https://gohugo.io/content-management/menus/). 
-
-
-Une fois notre menu créé, il faut que l'on ajoute un partials pour l'appeler et générer du code en conséquence. Pour cela, on se rend dans `layouts > partials` et on créer le fichier `nav.html`.
+Une fois notre menu créé, il faut que l'on ajoute un partial pour l'appeler et générer du code en conséquence. Pour cela, rendez-vous dans `layouts > partials` et créez le fichier `nav.html`.
 
 
 Celui-ci va contenir le code suivant : 
@@ -519,10 +508,10 @@ Celui-ci va contenir le code suivant :
 ```
 
 
-On créer simplement la structure de notre navigation en HTML, et on vient utiliser une autre fonction de Hugo, [range](https://gohugo.io/functions/go-template/range/), pour itérer sur les pages de notre navigation. L'[objet Site comporte tout un tas de méthode](https://gohugo.io/methods/site/), dont `Menus`, qui nous permet de récupérer un menu que l'on a configurer dans le fichier de configuration du site.
+On créer simplement la structure de notre navigation en HTML, et on vient utiliser une autre fonction de Hugo, [range](https://gohugo.io/functions/go-template/range/), pour itérer sur les pages de notre navigation. L'[objet Site comporte tout un tas de méthode](https://gohugo.io/methods/site/), dont `Menus`, qui nous permet de récupérer un menu dans le fichier de configuration du site.
 
 
-Il ne nous reste plus qu'a appeler notre partial dans le fichier `baseof.html` pour que notre menu apparaisse. On ajoute une balise `header` ici, mais on aurait aussi pu créer un partial avec la balise `header`, en fonction de notre préférence : 
+Il ne nous reste plus qu'a appeler notre partial dans le fichier `baseof.html` pour que notre menu apparaisse. On ajoute une balise `header` ici, mais on aurait aussi pu créer un partial avec la balise `header` déjà incluse, en fonction de notre préférence. 
 
 
 ```html
@@ -551,7 +540,7 @@ Et voilà, notre menu apparait dans toutes nos pages !
 ![Notre menu de navigation foncitonne](/menu-ok.png "Notre menu de navigation fonctionne")
 
 
-Il est possible d'aller plus loin évidemment, je vous met [un lien vers ce post qui rentre beaucoup plus en détail](https://harrycresswell.com/writing/menus-in-hugo/), notamment avec la mise en place de menu à plusieurs niveaux et de classes sur l'élément actif.
+Il est possible d'aller plus loin évidemment, je vous met [un lien vers ce post qui rentre beaucoup plus en détail](https://harrycresswell.com/writing/menus-in-hugo/), notamment avec la mise en place de menu à plusieurs niveaux et de l'ajout de classe sur l'élément actif.
 
 
 Mais pour le moment, passons à la dernière étape de la création de notre site ! 
@@ -560,7 +549,7 @@ Mais pour le moment, passons à la dernière étape de la création de notre sit
 ## Créer un liste de projet
 
 
-Pour commencer, on va créer nos projets. Pour cela, on va aller dans le dossier content, et ajouter un dossier avec le nom de notre choix, ici `projets`. Ce nom sera celui utilisé par Hugo pour déterminer le `type` de ces projets. On ajoute dans ce dossier un fichier `_index.md` afin de pouvoir passer des informations générales. Pour le moment, il peut simplement comprendre le nom de la page :
+Pour commencer, il faut créer nos projets. Pour cela, allez dans le dossier `content`, et ajoutez un dossier avec le nom de notre choix, pour le tutoriel, j'ai choisi `projets`. Ce nom sera celui utilisé par Hugo pour déterminer le `type` de ces projets. On ajoute dans ce dossier un fichier `_index.md` afin de pouvoir passer des informations générales. Pour le moment, il peut simplement comprendre le nom de la page :
 
 
 ```markdown
@@ -593,7 +582,7 @@ La structure doit ressembler à ça :
 ![La structure de nos projets dans VScode](/struct-projets-maj.png "La structure de nos projets dans VScode")
 
 
-Pour mettre en place nos projets, il faut ensuite créer deux nouveaux fichier de template dans `layouts > _default`, `section.html` et `single.html`. Commençons par `section.html`, c'est lui qui va récupérer tout les projets et les présenter dans une liste complète. 
+Pour mettre en place nos projets, il faut ensuite créer deux nouveaux fichiers de template dans `layouts > _default`, `section.html` et `single.html`. Commençons par `section.html`, c'est lui qui va récupérer tout les projets et les présenter dans une liste complète. 
 
 
 ```html
@@ -606,7 +595,7 @@ Pour mettre en place nos projets, il faut ensuite créer deux nouveaux fichier d
 ```
 
 
-On réutilise la fonction `range` que l'on a vu plus haut, et on va récupérer les pages stocké dans le variable globale `Site`, tant que celle-ci sont de types `"projets"`. On laisse ici le tri des pages par défaut, c'est mais il existe [plusieurs autres méthodes](https://gohugo.io/methods/pages/).
+On réutilise la fonction `range` que l'on a vu plus haut, et on va récupérer les pages stockées dans la variable globale `Site`, tant que celles-ci sont de types `"projets"`. On laisse ici le tri des pages par défaut, mais il existe [plusieurs autres méthodes](https://gohugo.io/methods/pages/).
 
 
 Pour voir le résultat, j'ajoute un onglet dans mon menu (via le fichier `Hugo.toml`) de la manière suivante : 
@@ -620,13 +609,13 @@ Pour voir le résultat, j'ajoute un onglet dans mon menu (via le fichier `Hugo.t
 ```
 
 
-Un nouvel onglet est créé, et la page `Mes projets` récupère bien tout les projets que l'on a ajouté sur le site, et nous propose un lien vers ces pages. 
+Un nouvel onglet est créé, et la page `Mes projets` récupère bien tous les projets que l'on a ajouté sur le site, et nous propose un lien vers ces pages. 
 
 
 ![Les projets affichés dans la page section](/cest-notre-projet.png "Les projets affichés dans la page section")
 
 
-Pour le moment, le site n'a pas de template pour afficher les projets unique, il faut donc le créer. C'est single.html qui s'en charge. Voilà un exemple très sommaire :
+Pour le moment, le site n'a pas de template pour afficher les projets unique, il faut donc le créer. C'est `single.html` qui s'en charge. Voilà un exemple très sommaire :
 
 
 ```html
@@ -645,7 +634,9 @@ Maintenant, si on clique sur un des projets, le contenu est correctement affich�
 ![Le contenu d'un projet](/contenu-projet.png "Le contenu d'un projet")
 
 
-Essayons maintenant de créer un partial pour afficher le dernier projet sur notre page d'accueil. Dans `layouts > partials`, on créer un fichier `html` avec le contenu suivant : 
+Pour l'exercice, essayez de créer un partial pour afficher le dernier projet sur notre page d'accueil. je vous met la solution à la suite, mais prenez le temps d'essayer vous même, pour vous faire la main.
+
+Dans `layouts > partials`, créez un fichier `html` avec le contenu suivant : 
 
 
 ```html
@@ -661,7 +652,7 @@ Essayons maintenant de créer un partial pour afficher le dernier projet sur not
 ```
 
 
-Très similaire à notre template `section.html`, sauf que l'on vient récupère seulement le premier projet de la liste avec la fonction `first`, le chiffre à la suite détermine le nombre à afficher. Si on avait noté 3, alors la fonctionne aurait affiché les 3 premières pages trouvées. 
+Très similaire à notre template `section.html`, sauf que l'on vient récupère seulement le premier projet de la liste avec la fonction `first`, le chiffre à la suite détermine le nombre à afficher. Si on avait noté 3, alors la fonction aurait affiché les 3 premières pages trouvées. 
 
 
 Pour que la description du projet que l'on appel ne soit pas vide, il faut lui ajouter dans le `FrontMatter` de la manière suivante (dans le fichier `projet-2.md`) : 
@@ -676,7 +667,7 @@ description : "Une description courte de mon projet."
 ```
 
 
-Il ne reste plus qu'a ajouter notre partial dans le page d'accueil, en passant par home.html : 
+Il ne reste plus qu'a ajouter notre partial dans le page d'accueil, en passant par `home.html` : 
 
 
 ```html
@@ -703,7 +694,7 @@ Avec tout ce qu'on a vu, vous avez une base solide pour créer un premier projet
 ## Mettre notre site en ligne avec Netlify
 
 
-Avant de continuer, assurer vous d'avoir push vos dernières modifications sur Github. Une fois cela fait créez vous un compte sur [Netlify](https://app.netlify.com/). Une fois le compte créé, rendez-vous dans la page `Sites` de notre espace personnel, puis cliquez sur `Add new site`. 
+Avant de continuer, assurez vous d'avoir push vos dernières modifications sur Github. Une fois cela fait, créez vous un compte sur [Netlify](https://app.netlify.com/). Ensuite, rendez-vous dans la page `Sites` de votre espace personnel, puis cliquez sur `Add new site`. 
 
 
 ![Ajouter un site à Netlify](/ajouter-site-netlify.png "Ajouter un site à Netlify")
@@ -715,17 +706,17 @@ Choisissez l'option `import an existing project`, puis choisissez GitHub. Connec
 ![Choix du répertoire à utiliser](/choix-du-repo.png "Choix du répertoire à utiliser")
 
 
-> Si votre répertoire ne s'affiche pas, suivez les étapes de ce tutoriel proposé par Hugo à partir de l'étape 4.
+> Si votre répertoire ne s'affiche pas, suivez [les étapes de ce tutoriel proposé par Hugo](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/) à partir de l'étape 4.
 
 
 Une fois le répertoire choisit, il faut compléter quelques paramètres. 
 
 
-1. **Site name** : Il doit être unique, tester la disponibilité,
-2. **Branch to deploy** : Laisser sur `main` par défaut,
-3. **Build command** : Ajouter la commande suivante : `hugo --gc --minify`,
-4. **Publish directory** : Si ce n'est pas complété, ajouté `public`,
-5. Enfin, cliquer sur le bouton **Add environment variables**, puis dans **Key** ajouter `HUGO_VERSION`, et dans **Value** ajouter le numéro de [la dernière version de Hugo](https://github.com/gohugoio/hugo/releases/latest), à la création de cette article `0.140.2`.
+1. **Site name** : Il doit être unique, testez la disponibilité,
+2. **Branch to deploy** : Laissez sur `main` par défaut,
+3. **Build command** : Ajoutez la commande suivante : `hugo --gc --minify`,
+4. **Publish directory** : Si ce n'est pas complété, ajoutez `public`,
+5. Enfin, cliquez sur le bouton **Add environment variables**, puis dans **Key** ajoutez `HUGO_VERSION`, et dans **Value** ajoutez le numéro de [la dernière version de Hugo](https://github.com/gohugoio/hugo/releases/latest), à la création de cette article, c'est `0.140.2`.
 
 
 ![Les paramètres dans Netlify ](/parametre-netlify.png "Les paramètres dans Netlify")
@@ -810,10 +801,14 @@ collections:
 ```
 
 
+le fichier `index.html` est simplement la page statique de notre pannel d'administration. Il appelle un script qui charge toutes les fonctionnalitées proposés par Sveltia. 
+
+Le fichier `config.yml` quant à lui, définit les paramètres de sécurités de notre backend ainsi que la structure des pages que l'on souhaite pouvoir retrouver dans le CMS. C'est ici que l'on fait le lien entre le FrontMatter des fichiers `.md` et de notre CMS.
+
 Une fois cela fait, on peut push nos ajouts sur GitHub. Mais notre CMS n'est pas encore tous à fait accessible, il faut gérer les autorisations. En effet, pour éviter que d'autres personnes puisse accéder à notre panel d'administration, il est nécessaire de faire le lien entre Netlify, notre CMS et GitHub. On va donc mettre en place une sécurité afin de pouvoir nous connecter via notre compte.
 
 
-Pour cela, il faut se rendre sur notre les [paramètres de notre compte GitHub](https://github.com/settings/profile), puis tout en bas dans `Developer Settings`. Cliquez ensuite sur `OAuth Apps` : 
+Pour cela, il faut se rendre dans les [paramètres de votre compte GitHub](https://github.com/settings/profile), puis tout en bas dans `Developer Settings`. Cliquez ensuite sur `OAuth Apps` : 
 
 
 ![Accès aux options de OAuth de GitHub](/acces-oaut-setting.png "Accès aux options de OAuth de GitHub")
@@ -839,22 +834,22 @@ Une fois fait, cliquez sur `Register application`. GitHub vous ouvre alors la pa
 ![Générer une clé privée](/generate-secret-id.png "Générer une clé privée")
 
 
-Copier bien la clé généré par GitHub dans un coin également, car il ne sera pas possible de la retrouver plus tard. Maintenant que c'est, il ne nous reste plus qu'a faire le lien entre GitHub et Netlify. Pour cela, rendez-vous dans le dashboard de votre site sur Netlify, puis naviguer dans `Site configuration > Access & security > OAuth`. Sous `Authentication providers`, cliquez sur `Install provider`. 
+Copier bien la clé généré par GitHub dans un coin également, car il ne sera pas possible de la retrouver plus tard. Maintenant que c'est fait, il ne nous reste plus qu'a faire le lien entre GitHub et Netlify. Pour cela, rendez-vous dans le dashboard de votre site sur Netlify, puis naviguez dans `Site configuration > Access & security > OAuth`. Sous `Authentication providers`, cliquez sur `Install provider`. 
 
 
 ![Installer un provider dans Netlify](/install-provider-netliffy.png "Installer un provider dans Netlify")
 
 
-Sélectionnez ensuite GitHub, et compléter les deux clés avec celles que l'on a géré un peu plus tôt :
+Sélectionnez ensuite GitHub, et complétez les deux clés avec celles que vous avez générés un peu plus tôt :
 
 
 ![Ajout des clées](/install-provider-netlify-secret.png "Ajout des clés")
 
 
-Enfin, il ne reste plus qu'a cliquez sur `Install`, et le tour est joué ! Maintenant, il nous est possible d'accéder à notre backoffice en ajoutant `/admin` à la suite de l'url de votre site en ligne. Il vous faudra vous identifier avec votre compte GitHub. 
+Enfin, il ne vous reste plus qu'a cliquer sur `Install`, et le tour est joué ! Maintenant, il vous est possible d'accéder à votre backoffice en ajoutant `/admin` à la suite de l'url de votre site en ligne. Il vous faudra vous identifier avec votre compte GitHub. 
 
 
-Vous êtes maintenant prêt pour ajouter du contenu à votre site à distance. À chaque mise à jour, le CMS va push les modifications sur le répertoire GitHub, et Netlify relancera la construction du site. Il n'y a rien à faire, quelques instants après avoir publié du contenu, il sera automatiquement en ligne. 
+Vous êtes maintenant prêt pour ajouter du contenu à votre site à distance. À chaque mise à jour, le CMS va pousser les modifications sur le répertoire GitHub, et Netlify relancera la construction du site. Il n'y a rien à faire, quelques instants après avoir publié du contenu, il sera automatiquement en ligne. 
 
 
 > Ressource utile pour cette section : 
@@ -864,5 +859,5 @@ Vous êtes maintenant prêt pour ajouter du contenu à votre site à distance. �
 > * <https://docs.netlify.com/security/secure-access-to-sites/oauth-provider-tokens/#using-an-authentication-provider>
 
 
-Bon, bah il reste plus qu'a le faire de votre côté :mortar_board:. 
-Promis si vous avez des soucis, je viendrai vous aider. Courage !
+Bon, bah il ne vous reste plus qu'a le faire de votre côté :mortar_board:. 
+Promis, si vous avez des soucis, je viendrai vous aider. Courage !
