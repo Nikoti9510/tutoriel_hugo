@@ -20,6 +20,8 @@ Dans ce tutoriel, on va créer un site en utilisant les outils suivants :
 * [Sveltia](https://github.com/sveltia/sveltia-cms/?tab=readme-ov-file#getting-started), c'est un projet se basant sur DecapCMS (anciennement [NetlifyCMS](https://www.netlify.com/blog/netlify-cms-to-become-decap-cms/)) et l'améliorant, notamment avec l'ajout d'un interface beaucoup plus poussé et de fonctionnalité de traitement d'images plus avancé. C'est grâce à Sveltia que l'on va pouvoir mettre à jour et ajouter du contenu sur notre site sans passer par un éditeur de code.
 * [Netlify](https://www.netlify.com/), qui fait le lien avec notre répertoire Github où est stocké notre projet, pour le transformer en site internet disponible en ligne. 
 
+---
+
 ## Mettre en place le projet
 
 
@@ -65,6 +67,8 @@ Et voilà, vous êtes prêt à travailler ! On pourrait s'arrêter là et faire 
 
 ***Avant de continuer, fermez GitHub Desktop et Visual Studio Code.***
 
+---
+
 ## Installation de Go, Hugo et Git
 
 
@@ -107,6 +111,9 @@ Dans la même console, vous pouvez maintenant copier la commande suivante pour i
 Rendez vous sur le [site de git pour Windows](https://git-scm.com/downloads/win) et téléchargez la dernière version en cliquant sur le premier lien. Il fois le téléchargement terminé, lancez l'exécutable et suivez les instructions. Voilà, c'est terminé. Pour le moment, pas si terrible.
 
 
+---
+
+
 ## Création du site avec Hugo
 
 
@@ -129,6 +136,7 @@ Remplacer `NOM_DU_SITE` par le nom de votre choix (sans espaces ni caractères s
 
 On constate une fois la création du site terminé, que des dossiers et fichiers ont été ajoutés dans le projet. À partir de là, deux choix s'offre à vous. Le premier, c'est d'installer un thème compatible avec Hugo. Le deuxième, continuer votre projet en partant de zéro. Pour ce tutoriel et dans un soucis de d'exhaustivité, je vais vous montrer comment installer un thèmes. Mais nous continuerons ensuite votre projet sans, afin de n'utiliser que ce qui est nécessaire et pour bien comprendre le fonctionnement de Hugo.
 
+---
 
 ## Installer un thème
 
@@ -153,6 +161,7 @@ Une fois la commande lancé et le thème téléchargé, il ne reste plus qu'a in
 
 Et voila ! Le template est chargé et on peut le prévisualiser sur le serveur de test, mais on va voir comment faire cela juste après, en partant de notre projet vierge. 
 
+---
 
 ## Configuration du site sans template
 
@@ -180,6 +189,7 @@ Si on se rend sur la page, on constaste qu'il y a un problème.
 
 ![Hugo ne trouve pas de page à afficher](/404-rip.png "Hugo ne trouve pas de page à afficher")
 
+---
 
 ## Structure d'un site Hugo
 
@@ -262,6 +272,7 @@ Enfin, on a créé le fichier Markdown `_index.md`, c'est à dire le fichier de 
 
 Avant d'aller plus loin, sauvegardons notre travail. 
 
+---
 
 ## Pousser les fichiers locaux sur Github
 
@@ -286,6 +297,7 @@ Une fois cela fait et le chargement effectué, vous pouvez voir votre travail da
 
 Améliorons maintenant un peu le site.
 
+---
 
 ## Mettre en place des sections avec les Partials
 
@@ -362,6 +374,7 @@ Avec un peu de CSS basique et les deux partials, le site commence (presque) à r
 
 Vous pouvez faire un nouveau commit pour sauvegarder votre travail. Pensez à le faire de temps à temps, une fois que vous avez ajouter des fichiers ou modifiés du contenu de manière significative.
 
+---
 
 ## Ajouter des pages
 
@@ -481,6 +494,7 @@ Il ne reste plus qu'a ajouter un peu de CSS, de relancer votre serveur et de nav
 
 N'oubliez pas de commit votre travail sur GitHub, et on continue. 
 
+---
 
 ## Créer un menu de navigation
 
@@ -568,6 +582,7 @@ Il est possible d'aller plus loin évidemment, je vous met [un lien vers ce post
 
 Mais pour le moment, passons à la dernière étape de la création de notre site ! 
 
+---
 
 ## Créer une liste de projet
 
@@ -715,6 +730,7 @@ Et voilà, le dernier projet s'affiche bien :
 
 Avec tout ce qu'on a vu, vous avez une base solide pour créer un premier site et prendre en main Hugo. Maintenant, passons à la mise en ligne.
 
+---
 
 ## Mettre notre site en ligne avec Netlify
 
@@ -767,6 +783,7 @@ Le site une fois construit, vous aurez ce message :
 
 Il ne reste plus qu'a consulter votre superbe site en ligne !
 
+---
 
 ## Installer le CMS
 
