@@ -472,13 +472,13 @@ Les Partials sont des sections utilisables dans les fichiers de templates. Les S
 > Plus d'info dans la documentation ici : [gohugo.io/content-management/markdown-attributes/#block-elements](https://gohugo.io/content-management/markdown-attributes/#block-elements)
 
 
-Il ne reste plus qu'a ajouter un peu de CSS, de relancer notre serveur et de naviguer jusqu'à notre superbe page de contact ! 
+Il ne reste plus qu'a ajouter un peu de CSS, de relancer votre serveur et de naviguer jusqu'à votre superbe page de contact ! 
 
 
 ![Notre page de contact fonctionne](/page-contact.png "Notre page de contact fonctionne")
 
 
-On oublie pas de commit notre travail sur GitHub, et on continue. 
+N'oubliez pas de commit votre travail sur GitHub, et on continue. 
 
 
 ## Créer un menu de navigation
