@@ -66,6 +66,10 @@ pre>code {
     background-color: transparent;
 }
 
+code>span {
+    line-height: 1.4;
+}
+
 img {
     border-radius: .3em;
 }
