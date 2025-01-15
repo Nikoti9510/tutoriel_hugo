@@ -886,4 +886,4 @@ Vous êtes maintenant prêt pour ajouter du contenu à votre site à distance. �
 
 Je vous laisse faire le tour du CMS par vous même, c'est une interface graphique assez simple, vous devriez vous en sortir.
 
-Bon, bah il ne vous reste plus qu'a le faire de votre côté :mortar_board:
+J'espère que vous avez tout compris. Intéro surprise, montrez moi vos portfolios :mortar_board:
