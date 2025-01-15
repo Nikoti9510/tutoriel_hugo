@@ -198,7 +198,7 @@ Pour le moment, il y a 3 dossiers qui nous intéresses :
 3. **layouts** : Où on va stocker les pages de templates en format `.HTML`, ainsi que les fameuses Partials, en quelques sortent des sections que l'on va pouvoir réutiliser dans notre site. 
 
 
-Pour plus de détails sur la structure de Hugo, consultez la documentation à ce sujet : [gohugo.io/getting-started/directory-structure/#directories](https://gohugo.io/getting-started/directory-structure/#directories)
+> Pour plus de détails sur la structure de Hugo, consultez la documentation à ce sujet : [gohugo.io/getting-started/directory-structure/#directories](https://gohugo.io/getting-started/directory-structure/#directories)
 
 
 Pour que notre site puisse fonctionner, il y quelques étapes à suivre : 
@@ -258,10 +258,6 @@ On a ensuite défini dans notre dossier `_defaut` le template de page pour toute
 
 
 Enfin, on a créé le fichier Markdown `_index.md`, c'est à dire le fichier de contenu, pour notre page d'accueil. On le place bien dans le dossier `content`, pour que Hugo puisse le retrouver et l'injecter dans la page. 
-
-
-> Plus d'info sur le fonctionnement et la hiérarchie de Hugo : 
-[https://gohugo.io/getting-started/directory-structure](https://gohugo.io/getting-started/directory-structure/#directories)
 
 
 Avant d'aller plus loin, sauvegardons notre travail. 
@@ -376,6 +372,9 @@ Pour ajouter des pages dans notre site, il faut que l'on créer un dossier dans 
 ![Ajout des dossiers pages](/page-contact-structure.png "Ajout des dossiers pages")
 
 
+> Pour comprendre pourquoi on met parfois un `_` devant les fichiers index, consultez la documentation de Hugo à propros de l'organisation des pages : [https://gohugo.io/content-management/page-bundles/](https://gohugo.io/content-management/page-bundles/)
+
+
 De cette manière, notre page va avoir un contenu différent de notre page d'accueil, mais toujours se construire à partir de notre fichier `baseof.html`. On peut également lui ajouter des éléments statiques différents et unique à cette page. Dans `contact.html`, ajoutez le code suivant :
 
 
@@ -410,7 +409,7 @@ Je suis à votre écoute pour réaliser votre projet !
 ```
 
 
-C'est le bon moment pour introduire le fonctionnement des fichiers Markdown. Vous l'avez sans doute remarqué plus haut, on a ajouté du contenu entre des blocs `---` en haut de nos fichiers `.md`. C'est le contenu [Frontmatter](https://frontmatter.codes/docs) de notre page. Il nous permet de définir toute une collection d'information relative à la page, que l'on pourra ensuite piloter via notre CMS plus tard. On reviendra un peu plus en détail sur cette partie plus tard, quand on abordera la création des projets. Ce que l'on peut retenir pour le moment, ce sont les lignes `layout: "contact"` et `url: "/contact/"`. La première spécifie à Hugo de construire la page à partir du fichier `.html` correspondant dans le dossier `layout`. La deuxième définit l'url de notre page.
+C'est le bon moment pour introduire le fonctionnement des fichiers Markdown. Vous l'avez sans doute remarqué plus haut, on a ajouté du contenu entre des blocs `---` en haut de nos fichiers `.md`. C'est le contenu [Frontmatter](https://frontmatter.codes/docs) de notre page. Il nous permet de définir toute une collection d'information relative à la page, que l'on pourra ensuite piloter via notre CMS plus tard, et que l'on peut récupérer dans les fichiers de templates. On reviendra un peu plus en détail sur cette partie plus tard, quand on abordera la création des projets. Ce que l'on peut retenir pour le moment, ce sont les lignes `layout: "contact"` et `url: "/contact/"`. La première spécifie à Hugo de construire la page à partir du fichier `.html` correspondant dans le dossier `layout`. La deuxième définit l'url de notre page.
 
 
 > Les émojis ne sont pas activés par défaut dans un site Hugo, il faut le définir dans le fichier de configuration `hugo.toml` ou `config.toml`. Plus d'infos ici : [gohugo.io/quick-reference/emojis/](https://gohugo.io/quick-reference/emojis/)
@@ -423,7 +422,7 @@ Pour finir, il faut que l'on ajoute un lien vers notre page contact sur notre pa
 * On ajoute un lien dans le fichier `_index.md`, c'est à dire le contenu de notre page d'accueil. 
 
 
-Ce choix va dépendre de notre usage et de notre situation, mais ici, il est plus logique que le lien soit directement dans le contenu de la page (et ça nous permet de voir comment ajouter un lien et une classe en Markdown). 
+Ce choix va dépendre de notre usage et de notre situation, on va pour l'exemple passer par le contenu afin de voir comment ajouter un lien et une classe en Markdown. 
 
 
 Dans `_index.md` donc : 
@@ -449,10 +448,10 @@ Ajouter un lien en Markdown est relativement simple comme vous pouvez le voir. L
 Dans cet exemple, j'ai indiqué le lien moi même, mais il est possible de laisser Hugo générer lui même le lien en [utilisant un shortcode](https://gohugo.io/methods/shortcode/). 
 
 
-Pour ajouter une classe ou un ID à un élément, il suffit de le définir entre accolades sous cet élément (à l'exception des titre Hn et des blocs de code, [plus de détail dans la documentation à ce sujet](https://gohugo.io/content-management/markdown-attributes/#usage)). Cependant, il n'est pas possible d'ajouter directement une classe sur un bouton. Dans notre cas, l'ajout du code `{.btn}` créer une balise `<p>` englobant notre lien. Il faut donc le prendre en compte dans notre CSS. 
+Pour ajouter une classe ou un ID à un élément, il faut le définir entre accolades sous cet élément (à l'exception des titre Hn et des blocs de code, [plus de détail dans la documentation à ce sujet](https://gohugo.io/content-management/markdown-attributes/#usage)). Cependant, il n'est pas possible d'ajouter directement une classe sur un lien. Dans notre cas, l'ajout du code `{.btn}` créer une balise `<p>` englobant notre lien. Il faut donc le prendre en compte dans notre CSS. 
 
 
-L'idéal est de définir un style par défaut pour les liens issus d'un bloc de contenu provenant d'un fichier markdown qui ne requiert pas d'ajout de classe, et j'ajouter les liens différents via des partials. Encore mieux, passez par un shortcode permet de définir un structure plus complexe pour des éléments à ajouter dans des fichiers markdown. 
+L'idéal est de définir un style par défaut pour les liens issus d'un bloc de contenu, afin de ne pas ajouter de classe. Les liens toujours présents dans une page peuvent être placé dans les partials ou templates. Encore mieux, vous pouvez passer par un shortcode, afin de définir une structure plus complexe pour des éléments à ajouter dans des fichiers markdown. 
 
 
 ***Pour donner une analogie : Les Partials sont des sections, les Shortcodes des widgets. ***
