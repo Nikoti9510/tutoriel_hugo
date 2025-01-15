@@ -68,16 +68,16 @@ Et voilà, vous êtes prêt à travailler ! On pourrait s'arrêter là et faire 
 ## Installation de Go, Hugo et Git
 
 
-Oui je sais, ***GIT*** ! Mais c'est pas si terrible vous allez voir. Surtout, ce n'est que pour l'étape d'installation et d'initialisation du projet. Ensuite, on travaille uniquement avec la version Desktop (mais comme Git sera installé, si l'envie vous prend d'aller plus loin, c'est possible).
+Oui je sais, ***GIT*** ! Mais ce n'est pas si terrible vous allez voir. Surtout, ce n'est que pour l'étape d'installation et d'initialisation du projet. Ensuite, on travaille uniquement avec la version Desktop (mais comme Git sera installé, si l'envie vous prend d'aller plus loin, c'est possible).
 
 
 ### Installer GO et Hugo
 
 
-Commençez par vous rendre sur [](gohugo.io/installation/)[gohugo.io/installation/](<>) et cliquez sur l'option correspondant à votre navigateur. Pour ce tutoriel, je vais suivre les étapes correspondant à Windows (c'est plus simple avec MacOS). 
+Commençez par vous rendre sur [](gohugo.io/installation/)[gohugo.io/installation/](<>) et cliquez sur l'option correspondant à votre navigateur. Pour ce tutoriel, je vais suivre les étapes pour Windows (mais c'est même plus simple avec MacOS). 
 
 
-Dans un premier temps, il nous faut installer [Go](https://go.dev/doc/install), le langage de programmation dans lequel Hugo est écrit. Pas de panique, nous n'aurons pas besoin d'apprendre un nouveau langage pour ce projet, il est simplement nécessaire de l'installer sur notre machine pour installer Hugo. Téléchargez l'exécutable pour Windows et suivez les instructions de l'installateur. 
+Dans un premier temps, il nous faut installer [Go](https://go.dev/doc/install), le langage de programmation dans lequel Hugo est écrit. Pas de panique, nous n'aurons pas besoin d'apprendre un nouveau langage pour ce projet, il est simplement nécessaire de l'installer sur notre machine pour que Hugo fonctionne. Téléchargez l'exécutable pour Windows et suivez les instructions de l'installateur. 
 
 
 ![Choisir le bon exécutable pour installer Go](/go.png "Choisir le bon exécutable pour installer Go")
@@ -89,7 +89,7 @@ Vous pouvez changer l'emplacement de l'installation sans problème lors de l'ins
 ![Changement de l'emplacement d'installation de Go](/go_2.png "Changement de l'emplacement d'installation de Go")
 
 
-Une fois l'installation terminé, on ouvre une invite de commande (Windows + R et sélectionnez `cmd` ou cliquez sur le menu démarrer et cherchez `cmd`). Tapez dans la console la ligne `Go version` pour constater que l'installation est bien réussit. 
+Une fois l'installation terminé, ouvrez une invite de commande (Windows + R et sélectionnez `cmd` ou cliquez sur le menu démarrer et cherchez `cmd`). Tapez dans la console la ligne `Go version` pour constater que l'installation est bien réussit. 
 
 
 ![Go est bien installé sur cette machine](/go_3.png "Go est bien installé sur cette machine")
@@ -104,13 +104,13 @@ Dans la même console, vous pouvez maintenant copier la commande suivante pour i
 ### Installer Git
 
 
-Rendez vous sur le [site de git pour Windows](https://git-scm.com/downloads/win) pour télécharger la dernière version en cliquant sur le premier lien. Il fois le téléchargement terminé, lancez l'exécutable et suivez les instructions. Voilà, c'est terminé. Pour le moment, pas si terrible.
+Rendez vous sur le [site de git pour Windows](https://git-scm.com/downloads/win) et téléchargez la dernière version en cliquant sur le premier lien. Il fois le téléchargement terminé, lancez l'exécutable et suivez les instructions. Voilà, c'est terminé. Pour le moment, pas si terrible.
 
 
 ## Création du site avec Hugo
 
 
-Une fois que l'installation est terminé, on est prêt à créer notre site ! Pour ça, on réouvre GitHub Desktop et notre projet dans Visual Studio Code. Une fois dans VScode, on va dans `Terminal > New Terminal`.
+Une fois que l'installation est terminé, vous êtes prêt à créer votre site ! Pour ça, réouvrez GitHub Desktop et votre projet dans Visual Studio Code. Une fois dans VScode, on va dans `Terminal > New Terminal`.
 
 
 ![Ouvrir un terminal dans Visual Studio Code](/terminal.png "Ouvrir un terminal dans Visual Studio Code")
@@ -121,13 +121,13 @@ Dans le terminal qui s'est ouvert en bas de l'éditeur, vous pouvez maintenant g
 
 `Hugo new site NOM_DU_SITE`
 
-Remplacer NOM_DU_SITE par le nom de votre choix (sans espaces ni caractères spéciaux).
+Remplacer `NOM_DU_SITE` par le nom de votre choix (sans espaces ni caractères spéciaux).
 
 
 ![La création du site est terminé dans VScode](/hugo-new-site.png "La création du site est terminé dans VScode")
 
 
-On constate une fois la création du site terminé, que des dossiers et fichiers ont été ajoutés dans notre projet. À partir de là, deux choix s'offre à nous. Le premier, c'est d'installer un thème compatible avec Hugo. Le deuxième, continuer notre projet en partant de zéro. Pour ce tutoriel et dans un soucis de d'exhaustivité, je vais vous montrer comment installer un de ces thèmes. Mais nous continuerons ensuite notre projet sans, afin de n'utiliser que ce qui est nécessaire et pour bien comprendre le fonctionnement de Hugo.
+On constate une fois la création du site terminé, que des dossiers et fichiers ont été ajoutés dans le projet. À partir de là, deux choix s'offre à vous. Le premier, c'est d'installer un thème compatible avec Hugo. Le deuxième, continuer votre projet en partant de zéro. Pour ce tutoriel et dans un soucis de d'exhaustivité, je vais vous montrer comment installer un thèmes. Mais nous continuerons ensuite votre projet sans, afin de n'utiliser que ce qui est nécessaire et pour bien comprendre le fonctionnement de Hugo.
 
 
 ## Installer un thème
@@ -139,10 +139,10 @@ Hugo propose une [collection de thème gratuit sur son site](https://themes.gohu
 `git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod`
 
 
-> /!\ Il faut s'assurer que l'on se trouve à la racine de notre projet avant d'exécuter la commande. Dans le terminal, le chemin devrait être "GitHub\Nom_du_repertoire". Si ce n'est pas le cas, il faut s'y rendre. Utiliser `cd Nom_du_dossier` vous permet de vous rendre à cette endroit. Utilisez `ls` vous permet de lister tout les dossiers en enfant de celui dans lequel vous êtes. Utilisez `cd ..` vous permet de remonter un niveau. 
+> /!\ Il faut s'assurer que l'on se trouve à la racine de notre projet avant d'exécuter la commande. Dans le terminal, le chemin devrait être "GitHub\Nom_du_repertoire". Si ce n'est pas le cas, il faut s'y rendre. Utiliser `cd Nom_du_dossier` vous permet de vous rendre à cet endroit. Utilisez `ls` vous permet de lister tout les dossiers en enfant de celui dans lequel vous vous trouvez. Utilisez `cd ..` vous permet de remonter un niveau. 
 
 
-Une fois la commande lancé et le thème téléchargé, il ne reste plus qu'a indiquer à Hugo que nous souhaitons utiliser ce thème. Pour cela, il faut se rendre dans le fichier de configuration `config.toml` (ou `hugo.toml`, les deux fonctionnes et peuvent être présent) et d'ajouter la ligne suivante dans le fichier : 
+Une fois la commande lancé et le thème téléchargé, il ne reste plus qu'a indiquer à Hugo que vous souhaitez utiliser ce thème. Pour cela, rendez-vous dans le fichier de configuration `config.toml` (ou `hugo.toml`, les deux fonctionnes et peuvent être présent) et d'ajouter la ligne suivante dans le fichier : 
 
 
 `theme = ["PaperMod"]`
@@ -151,13 +151,13 @@ Une fois la commande lancé et le thème téléchargé, il ne reste plus qu'a in
 ![Choix du template dans le fichier Hugo.toml](/hugo_toml.png "Choix du template dans le fichier Hugo.toml")
 
 
-Et voila ! Le template est chargé et on peut le prévisualiser sur le serveur de test, mais on va voir ensemble comment faire cela juste après, en partant de notre projet vierge. 
+Et voila ! Le template est chargé et on peut le prévisualiser sur le serveur de test, mais on va voir comment faire cela juste après, en partant de notre projet vierge. 
 
 
 ## Configuration du site sans template
 
 
-Dans cette partie, nous allons créer la structure de base pour notre site. On va commencer par créer une page d'accueil, avec une header, du contenu et un footer. Cela va nous permettre de prendre en main le fonctionnement de Hugo, en particulier le système de partials et comment les manipuler. On prendra également le temps de voir comment créer un menu de navigation ainsi qu'une liste de projets dans notre page d'accueil. 
+Dans cette partie, nous allons créer la structure de base pour votre site. On va commencer par créer une page d'accueil, avec un header, du contenu et un footer. Cela va vous permettre de prendre en main le fonctionnement de Hugo, en particulier le système de partials de template. On prendra également le temps de voir comment créer un menu de navigation ainsi qu'une liste de projets dans notre page d'accueil. 
 
 
 ### Lancer un serveur de test
@@ -194,8 +194,8 @@ Pour le moment, il y a 3 dossiers qui nous intéresses :
 
 
 1. **static** : C'est ici que l'on va stocker toutes les ressources utiles au site qui ne changent jamais, tels que les images réutilisées dans toutes les pages, les fichiers CSS et Javascripts, etc.
-2. **content** : Dans ce dossier, on va retrouver nos pages, en format `.md` (pour [Markdown](https://www.markdownguide.org/cheat-sheet/))
-3. **layouts** : Où l'on va stocker les pages de templates en format `.HTML`, ainsi que les fameuses Partials, en quelques sortent des sections que l'on va pouvoir réutiliser dans notre site. 
+2. **content** : Dans ce dossier, on va retrouver nos pages de contenus, en format `.md` (pour [Markdown](https://www.markdownguide.org/cheat-sheet/))
+3. **layouts** : Où on va stocker les pages de templates en format `.HTML`, ainsi que les fameuses Partials, en quelques sortent des sections que l'on va pouvoir réutiliser dans notre site. 
 
 
 Pour plus de détails sur la structure de Hugo, consultez la documentation à ce sujet : [gohugo.io/getting-started/directory-structure/#directories](https://gohugo.io/getting-started/directory-structure/#directories)
@@ -204,8 +204,8 @@ Pour plus de détails sur la structure de Hugo, consultez la documentation à ce
 Pour que notre site puisse fonctionner, il y quelques étapes à suivre : 
 
 
-1. Créer un dossier `_default` dans `layouts`.
-2. Dans `_default`, créer un fichier `home.html` avec le contenu suivant :
+1. Créez un dossier `_default` dans `layouts`.
+2. Dans `_default`, créez un fichier `home.html` avec le contenu suivant :
 
 
    ```html
@@ -213,7 +213,7 @@ Pour que notre site puisse fonctionner, il y quelques étapes à suivre :
        {{ .Content }}
    {{ end }}
    ```
-3. Toujours dans `layouts > _default`, créer un fichier `baseof.html` avec le contenu suivant :
+3. Toujours dans `layouts > _default`, créez un fichier `baseof.html` avec le contenu suivant :
 
 
 	```html
@@ -225,7 +225,7 @@ Pour que notre site puisse fonctionner, il y quelques étapes à suivre :
      </body>
      </html>
    ```
-4. Enfin, dans le dossier `content`, ajouter un fichier `_index.md` avec le contenu suivant : 
+4. Enfin, dans le dossier `content`, ajoutez un fichier `_index.md` avec le contenu suivant : 
 	```markdown
 	---
 	title: "Page d'accueil"
@@ -242,7 +242,7 @@ Voilà à quoi ressemble la structure après la création.
 ![Création des nouveaux fichiers](/structure-v2.png "Création des nouveaux fichiers")
 
 
-Si on relance notre serveur de test, on constate bien que du contenu s'affiche ! 
+Si vous relancez le serveur de testvous pouvez constatez que du contenu s'affiche ! 
 
 
 ![La page affiche bien du contenu](/le-site-fonctionne-v2.png "la page affiche bien du contenu")
@@ -251,21 +251,26 @@ Si on relance notre serveur de test, on constate bien que du contenu s'affiche !
 Expliquons ce que l'on vient de faire : 
 
 
-On créer un fichier `home.html` qui correspond à notre page d'accueil et on l'ajoute dans le dossier `layouts > _default` afin que Hugo le trouve. Dans ce fichier, on défini un bloc que l'on nomme `main` dans lequel on ajoute le contenu de la page, `Content`. Ce contenu est récupéré automatiquement par Hugo dans le fichier `_index.md`, si celle-ci existe dans le dossier content.
+On a créé un fichier `home.html` qui correspond à notre page d'accueil et on l'ajoute dans le dossier `layouts > _default` afin que Hugo le trouve. Dans ce fichier, on défini un bloc que l'on nomme `main`, dans lequel on ajoute le contenu de la page, `Content`. Ce contenu est récupéré automatiquement par Hugo dans le fichier `_index.md`, si celui-ci existe dans le dossier content.
 
 
-On a ensuite défini dans notre dossier `_defaut` le template de page pour toutes nos pages, qui se nomme `baseof.html`. C'est cette page qui est toujours utilisé par Hugo pour assembler nos pages (il est possible d'en définir plusieurs en cas de besoin, voir [gohugo.io/templates/lookup-order](https://gohugo.io/templates/lookup-order/)). Pour le moment, notre fichier `baseof.html` est très simple, mais on va venir l'améliorer un peu plus tard. On a en plus de cela créé un modèle alternatif pour notre page d'acceuil, `home.html`.
+On a ensuite défini dans notre dossier `_defaut` le template de page pour toutes nos pages, qui se nomme `baseof.html`. C'est cette page qui est toujours utilisé par Hugo pour assembler nos pages (il est possible d'en définir plusieurs en cas de besoin, voir [gohugo.io/templates/lookup-order](https://gohugo.io/templates/lookup-order/)). Pour le moment, notre fichier `baseof.html` est très simple, mais on va venir l'améliorer un peu plus tard. `home.html` se base sur ce template, et pour le moment ne fait rien de plus.  
 
 
 Enfin, on a créé le fichier Markdown `_index.md`, c'est à dire le fichier de contenu, pour notre page d'accueil. On le place bien dans le dossier `content`, pour que Hugo puisse le retrouver et l'injecter dans la page. 
 
 
+> Plus d'info sur le fonctionnement et la hiérarchie de Hugo : 
+[https://gohugo.io/getting-started/directory-structure](https://gohugo.io/getting-started/directory-structure/#directories)
+
+
 Avant d'aller plus loin, sauvegardons notre travail. 
+
 
 ## Pousser les fichiers locaux sur Github
 
 
-RSi on se rend dans GitHub Desktop, on remarque que plusieurs fichiers sont ajoutés dans la liste des modifications. Pour pouvoir les envoyer sur votre RepoGitHub™, il faut donner un nom à votre commit. Quelques choses dans la veine de "Premier push" fera l'affaire. Vous pouvez ajouter une description si l'envie vous prend. Essayez d'être clair et précis dans vos noms de push, car vous pourrez les retrouver dans Github et revenir en arrière quand des bugs vont inévitablement apparaitre.  
+Si on se rend dans GitHub Desktop, on remarque que plusieurs fichiers sont ajoutés dans la liste des modifications. Pour les envoyer sur votre RepoGitHub™, il faut donner un nom à votre commit. Quelques choses dans la veine de "Premier push" fera l'affaire. Vous pouvez ajouter une description si l'envie vous prend. Essayez d'être clair et précis dans vos noms de push, car vous pourrez les retrouver dans Github et revenir en arrière quand des bugs vont inévitablement apparaitres.  
 
 
 ![Le premier push sur notre répertoire GitHub](/premier-push-github.png "Le premier push sur notre répertoire GitHub")
@@ -289,10 +294,24 @@ Améliorons maintenant un peu le site.
 ## Mettre en place des sections avec les Partials
 
 
-Comme je l'ai noté plus haut, Hugo nous permet de mettre en place des sous éléments ou sections, qui vont nous permettre de réutiliser des portions de code à plusieurs endroits de notre site. Dans notre template par défaut `baseof.html`, ajoutons le code suivant : 
+Comme je l'ai noté plus haut, Hugo nous permet de mettre en place des sections, qui vont nous permettre de réutiliser des portions de code à plusieurs endroits de notre site. Dans notre template par défaut `baseof.html`, ajoutons le code suivant : 
 
 
-![Ajout de partials dans le layout de base](/partials-dans-baseof.png "Ajout de partials dans le layout de base")
+```html
+<html lang="{{ site.Language }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>
+```
 
 
 On a ajouté dans notre page deux partials, `head.html` et `footer.html`. La syntaxe est toujours : 
@@ -303,10 +322,10 @@ On a ajouté dans notre page deux partials, `head.html` et `footer.html`. La syn
 ```
 
 
-> [](https://gohugo.io/getting-started/directory-structure/#directories)Concernant le `.` que l'on ajoute après le chemin (et que l'on remarque aussi dans l'appel du block `main`), il représente le contexte. Je ne rentre pas dans le détail ici, mais il est indispensable au bon fonctionnement du partial. Plus d'info sur la [documentation du contexte](https://gohugo.io/templates/introduction/#context) dans Hugo et des [partials](https://gohugo.io/templates/partial/). 
+> Concernant le `.` que l'on ajoute après le chemin (et que l'on remarque aussi dans l'appel du block `main`), il représente le contexte. Je ne rentre pas dans le détail ici, mais il est indispensable au bon fonctionnement du partial. Plus d'info sur la [documentation du contexte](https://gohugo.io/templates/introduction/#context) dans Hugo et des [partials](https://gohugo.io/templates/partial/). 
 
 
-Il faut maintenant créer les fichiers pour que Hugo puisse les charger. Pour cela, on ajoute un dossier `partials` dans le dossier `layouts`. On peut créer nos deux partials ici et on se retrouve avec la structure suivante : 
+Il faut maintenant créer les fichiers pour que Hugo puisse les charger. Pour cela, ajoutez un dossier `partials` dans le dossier `layouts`. Vous pouvez ajouter vos deux partials ici afin d'obtenir la structure suivante : 
 
 
 ![Le dossier des partials](/dossier-partials.png "Le dossier des partials")
@@ -333,16 +352,19 @@ Pour notre `head`, ajoutons un tout petit peu plus de contenu :
 Dans la balise `title`, on fait référence au titre de la page active, en faisant appel au contexte (avec le symbole `.`) de la page. La valeur de ce titre est récupéré dans le fichier Markdown correspondant. Il changera donc en fonction de la page dans lequel on se trouve. 
 
 
-On a également ajouté un lien vers un fichier CSS. Celui-ci doit être ajouté dans le dossier `static` de notre projet (dans cette exemple, on a donc `static > css > style.css`). Le contenu de ce dossier est chargé tel quel lors de la construction du site, mais le dossier lui n'est pas ajouté ! Il ne faut donc pas l'ajouter dans le chemin (j'ai perdu quelques cheveux à comprendre ça). 
+On a également ajouté un lien vers un fichier CSS. Celui-ci doit être ajouté dans le dossier `static` de notre projet (dans cette exemple, on a donc `static > css > style.css`). 
 
 
-Avec un peu de CSS basique et nos deux partials, notre site commence (presque) à ressembler à quelque chose.
+> Le contenu de ce dossier est chargé tel quel lors de la construction du site, mais le dossier lui n'est pas ajouté ! Il ne faut donc pas l'ajouter dans le chemin (j'ai perdu quelques cheveux à comprendre ça). 
+
+
+Avec un peu de CSS basique et les deux partials, le site commence (presque) à ressembler à quelque chose.
 
 
 ![Le site avec les partials et le CSS](/le-site-avec-les-partials-et-le-css-v2.png "Le site avec les partials et le CSS")
 
 
-On peut faire un nouveau commit pour sauvegarder notre travail. Pensez à le faire de temps à temps, une fois que vous avez ajouter des fichiers ou modifier du contenu de manière significative.
+Vous pouvez faire un nouveau commit pour sauvegarder votre travail. Pensez à le faire de temps à temps, une fois que vous avez ajouter des fichiers ou modifiés du contenu de manière significative.
 
 
 ## Ajouter des pages
