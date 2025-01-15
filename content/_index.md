@@ -455,7 +455,7 @@ L'idéal est de définir un style par défaut pour les liens issus d'un bloc de 
 
 
 **Pour donner une analogie : 
-Les Partials sont des sections utilisables dans les fichiers de templates. Les Shortcodes des widgets, utilisable dans les fichiers de contenus.**
+Les Partials sont des sections utilisables dans les fichiers de templates. Les Shortcodes sont des widgets, utilisable dans les fichiers de contenus.**
 
 
 > L'ajout de classe dans les fichiers .md n'est pas activé par défaut dans Hugo, il faut ajouter dans le fichier `hugo.toml` ou `config.toml` le contenu suivant : 
